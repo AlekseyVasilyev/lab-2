@@ -1,10 +1,11 @@
 @media screen and (max-width:768px){
     .grid-container{
         display:grid;
-        grid-gap: 40px;
+        grid-gap: 10px;
         grid-template-columns: 0.1fr 0.8fr 0.1fr;
-        grid-template-rows: 0.07fr 1fr 0.1fr 0.5fr 0.6fr 0.6fr 0.6fr 0.6fr 100px;;
+        grid-template-rows: 0.07fr 0.04fr 1fr 0.08fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.1fr;;
         grid-template-areas: 'header header header'
+                            '. . .'
                             'main main main'
                             'product product product'
                             '. first .'
@@ -32,9 +33,6 @@
         border:2px solid #931773;
         background-color: #eed0db;
         font-size: 1.2vw;
-    }
-    .cat_feed img{
-        width:70%;
     }
     #whiskas img{
         height: 7.5vw;
@@ -79,4 +77,14 @@
         width:35vw;
         float:left;
     } 
+    #cat_div img{
+        height:65vw;
+    }
+    #product p{
+        margin:2% 0 2% 0;
+        letter-spacing: 3px;
+        font-weight: bold;
+        color: #f0dae2;
+        font-size: 5vw;
+    }
 }

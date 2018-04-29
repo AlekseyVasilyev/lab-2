@@ -40,4 +40,11 @@
         margin: 1% 20px ;
         width:15vw;
     } 
+    #product p{
+        margin:2% 0 2% 0;
+        letter-spacing: 3px;
+        font-weight: bold;
+        color: #f0dae2;
+        font-size: 35px;
+    }
 }

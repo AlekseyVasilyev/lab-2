@@ -3,7 +3,7 @@
         display: grid;
         grid-gap: 10px;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.15fr 0.2fr 0.5fr 200px;
+        grid-template-rows: 0.15fr 0.2fr 0.5fr 0.1fr;
         grid-template-areas: 'header'
                             'first-element'
                             'second-element'

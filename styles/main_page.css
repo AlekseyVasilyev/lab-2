@@ -42,13 +42,6 @@
     border-radius: 5px;
     grid-area: product;
 }
-#product p{
-    margin-top:15px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    color: #f0dae2;
-    font-size: 35px;
-}
 .cat_feed{
     display: flex;
     justify-content: flex-start;
