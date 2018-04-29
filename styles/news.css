@@ -1,85 +1,17 @@
-body{
-    background-color: #ffecf3;
-    color:#931773;
-    font-family: Verdana, Tahoma, sans-serif;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-header{
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    width:100%;
-    height:60px;
-    color: #f0dae2;
-    background-image: -moz-linear-gradient(90deg,#811565,#931773,#a51881);
-    background-image: -webkit-linear-gradient(90deg,#811565,#931773,#a51881);
-    background-image: -o-linear-gradient(90deg,#811565,#931773,#a51881);
-    z-index: 1;
-}
-#logo{
-    height: 100%;
-}
-#name{
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 40px;
-    margin-top:5px;
-    margin-left:2%;
-}
-#whiskas{
-    width:50%;
-    display: flex;
-    justify-content: flex-start;
-}
-#header_buttons{
-    width:27%;
-    margin-right:3%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.head_button{
-    font-size: 30px;
-    font-family: 'Philosopher',Verdana, sans-serif;
-    font-weight: 700;
-    letter-spacing: 2px;
-    background-color:#370b48 ;
-    width:60%;
-    height: 44px;
-    margin-top: 6px;
-    margin-left: 5%;
-    border: 2px solid #ffecf3;
-    text-align: center;
-    color: #f0dae2;
-}
-.head_button p{
-    margin-top: 2%;
-}
-#first_news{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 80px;
-    width: 75%;
-}
-.news{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 30px;
-    width: 75%;
-}
+@import url(global.css);
+
 .author_date{
     display: flex;
     justify-content: flex-start;
     margin: 10px 0 0 0;
     font-size: 15px;
+    grid-area: author_date;
 }
 .author_date p{
     margin: 0 20px 0 0;
+}
+.description{
+    grid-area: description;
 }
 .description img{
     width:50%;
@@ -94,6 +26,7 @@ header{
     margin: 5px 0 10px 0;
     font-size: 25px;
     color:#370b48;
+    grid-area: news_header;
 }
 .txt_area{
     margin-top:10px;
@@ -101,64 +34,53 @@ header{
     height:120px;
     background-color: white;
     border:1px solid #370b48;
-}
-#footer{
-    font-size: 15px;
-    margin-top: 20px;
-    width:100%;
-    height:60px;
-    background-image: -moz-linear-gradient(90deg,#a51881,#931773,#811565);
-    background-image: -webkit-linear-gradient(90deg,#a51881,#931773,#811565);
-    background-image: -o-linear-gradient(90deg,#a51881,#931773,#811565);
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    color:#f0dae2;
-}
-.contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-.contact p{
-    margin:3px;
+    grid-area: txt_area;
 }
 
-/* @media screen and (min-width: 1024px){
+.first{
+    grid-area: first;
+}
+.second{
+    grid-area: second;
+}
+.third{
+    grid-area: third;
+}
+
+@media screen and (min-width: 1024px){
     .grid-container{
         display: grid;
         grid-gap: 10px;
-        grid-template-columns: 0.15fr 0.35fr 0.35fr 0.15fr;
-        grid-template-rows: 60px 1fr 80px 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 80px;
+        grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
+        grid-template-rows: 0.1fr 0.7fr 0.7fr 0.7fr 80px;
         grid-template-areas: 'header header header header'
-                            'main main main main'
-                            '. product product .'
                             '. first first .'
                             '. second second .'
                             '. third third .'
-                            '. fourth fourth .'
-                            '. fifth fifth .'
                             'footer footer footer footer';
     }
     header{
         display: grid;
         grid-template-columns: 0.3fr 0.4fr 0.3fr;
-        grid-template-rows: 60px;
+        grid-template-rows: 100%;
         grid-template-areas:'whiskas . header_buttons'
     }
-    #main{
-        display:grid;
-        grid-template-columns: 0.27fr 0.46fr 0.27fr;
-        grid-template-rows: 1fr;
-        grid-template-areas:'short_inf cat_div preim_osob'
+    .news{
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: 0.05fr 0.1fr 1fr 0.5fr;
+        grid-template-areas:'author_date .'
+                            'news_header news_header'
+                            'description description'
+                            'txt_area txt_area';
     }
     #whiskas img{
-        height: 100%;
-        width:23%;
+        height: 3.5vw;
+        width:5vw;
     }
     #whiskas{
         display: flex;
         justify-content: flex-start;
         grid-area:whiskas;
     }
-} */
+}

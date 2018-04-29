@@ -1,0 +1,71 @@
+@media screen and (max-width:768px){
+    .grid-container{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.15fr 0.2fr 0.5fr 200px;
+        grid-template-areas: 'header'
+                            'first-element'
+                            'second-element'
+                            'footer';
+    }
+    #whiskas img{
+        display:none;
+    }
+    header{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.1fr;
+        grid-template-areas:'whiskas'
+                            'header_buttons'
+    }
+    #first_element{
+        display: grid;
+        grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
+        grid-template-rows: 80px 0.5fr 0.5fr;
+        grid-template-areas: '. headline headline .'
+                            '. first second .'
+                            '. third fourth .'
+    }
+    #second_element{
+        display: grid;
+        grid-template-columns: 0.1fr 0.8fr 0.1fr;
+        grid-template-rows: 0.5fr 0.5fr;
+        grid-template-areas: '.company .'
+                            '. links .';
+    }
+    #whiskas{
+        display: grid;
+        grid-area:whiskas;
+        font-size: 4vw;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'name';
+        text-align: center;
+    }
+    .worker img{
+    width:25vw;
+    height: 35vw;
+    border-radius: 5px;
+    border:1px solid black;
+    box-shadow: 1px 1px 3px 1px #370b48;
+    }
+    p{
+        font-size: 3vw;
+    }
+    h3{
+        font-size: 3vw;
+    }
+    .head_button p{
+        font-size: 6vw;
+        margin: 0;
+    }
+    .head_button{
+        border:0;
+        border-left: 1px solid #ffecf3;
+        border-right: 1px solid #ffecf3;
+        height:100% ;
+        width:50%;
+        margin-right: 0;
+        margin-top: 0;
+    }
+}

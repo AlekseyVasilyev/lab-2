@@ -1,0 +1,84 @@
+body{
+    background-color: #ffecf3;
+    color:#931773;
+    font-family: Verdana, Tahoma, sans-serif;
+    margin: 0;
+}
+header{
+    position: fixed;
+    grid-area: header;
+    background-image: -moz-linear-gradient(90deg,#811565,#931773,#a51881);
+    background-image: -webkit-linear-gradient(90deg,#811565,#931773,#a51881);
+    background-image: -o-linear-gradient(90deg,#811565,#931773,#a51881);
+    color: #f0dae2;
+    z-index: 1;
+    width:100%;
+}
+#whiskas h1{
+    margin-bottom: 0;
+}
+#name{
+    font-family: Verdana, Geneva, sans-serif;
+    margin-top:0;
+    margin-left:10px;
+    grid-area: name;
+}
+#header_buttons{
+    margin-top:0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    grid-area: header_buttons;
+}
+.head_button{
+    font-family: 'Philosopher',Verdana, sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background-color:#370b48 ;
+    border: 2px solid #ffecf3;
+    text-align: center;
+    color: #f0dae2;
+}
+.head_button p{
+    margin-top: 2%;
+}
+#footer{
+    font-size: 15px;
+    margin-top: 20px;
+    background-image: -moz-linear-gradient(90deg,#a51881,#931773,#811565);
+    background-image: -webkit-linear-gradient(90deg,#a51881,#931773,#811565);
+    background-image: -o-linear-gradient(90deg,#a51881,#931773,#811565);
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    color:#f0dae2;
+    grid-area: footer;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.contact p{
+    margin:3px;
+}
+#whiskas{
+    display: flex;
+    justify-content: flex-start;
+    grid-area:whiskas;
+}
+.first{
+    grid-area: first;
+}
+.second{
+    grid-area: second;
+}
+.third{
+    grid-area: third;
+}
+.fourth{
+    grid-area: fourth;
+}
+.fifth{
+    grid-area: fifth;
+}
