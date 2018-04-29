@@ -1,0 +1,82 @@
+@media screen and (max-width:768px){
+    .grid-container{
+        display:grid;
+        grid-gap: 40px;
+        grid-template-columns: 0.1fr 0.8fr 0.1fr;
+        grid-template-rows: 0.07fr 1fr 0.1fr 0.5fr 0.6fr 0.6fr 0.6fr 0.6fr 100px;;
+        grid-template-areas: 'header header header'
+                            'main main main'
+                            'product product product'
+                            '. first .'
+                            '. second .'
+                            '. third .'
+                            '. fourth .'
+                            '. fifth .'
+                            'footer footer footer'
+    }
+    header{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.1fr;
+        grid-template-areas:'whiskas'
+                            'header_buttons'
+    }
+    #whiskas img{
+        display:none;
+    }
+    .cat_feed{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        border:2px solid #931773;
+        background-color: #eed0db;
+        font-size: 1.2vw;
+    }
+    .cat_feed img{
+        width:70%;
+    }
+    #whiskas img{
+        height: 7.5vw;
+        width:10vw;
+    }
+    #whiskas{
+        display: grid;
+        grid-area:whiskas;
+        font-size: 4vw;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'name';
+        text-align: center;
+    }
+    #name{
+        margin-left: 0;
+    }
+    .head_button p{
+        font-size: 6vw;
+        margin: 0;
+    }
+    .head_button{
+        border:0;
+        border-left: 1px solid #ffecf3;
+        border-right: 1px solid #ffecf3;
+        height:100% ;
+        width:50%;
+        margin-right: 0;
+        margin-top: 0;
+    }
+    #header_buttons{
+        height:100%;
+    }
+    p{
+        font-size: 2vw;
+    }
+    h3{
+        font-size: 2.5vw;
+    }
+    .cat_feed img{
+        height: 50vw;
+        margin: 1% 20px ;
+        width:35vw;
+        float:left;
+    } 
+}
