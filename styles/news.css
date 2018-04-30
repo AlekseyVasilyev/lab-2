@@ -1,4 +1,7 @@
 @import url(global.css);
+@import url(news-desktop.css);
+@import url(news-tablet.css);
+@import url(news-mobile.css);
 
 .author_date{
     display: flex;
@@ -13,18 +16,11 @@
 .description{
     grid-area: description;
 }
-.description img{
-    width:50%;
-    float: left;
-    margin:0 10px 0 0;
-    box-shadow: 1px 1px 3px 0;
-}
 .description p{
     margin: 0;
 }
 .news_header{
     margin: 5px 0 10px 0;
-    font-size: 25px;
     color:#370b48;
     grid-area: news_header;
 }
@@ -45,42 +41,4 @@
 }
 .third{
     grid-area: third;
-}
-
-@media screen and (min-width: 1024px){
-    .grid-container{
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
-        grid-template-rows: 0.1fr 0.7fr 0.7fr 0.7fr 80px;
-        grid-template-areas: 'header header header header'
-                            '. first first .'
-                            '. second second .'
-                            '. third third .'
-                            'footer footer footer footer';
-    }
-    header{
-        display: grid;
-        grid-template-columns: 0.3fr 0.4fr 0.3fr;
-        grid-template-rows: 100%;
-        grid-template-areas:'whiskas . header_buttons'
-    }
-    .news{
-        display: grid;
-        grid-template-columns: 0.5fr 0.5fr;
-        grid-template-rows: 0.05fr 0.1fr 1fr 0.5fr;
-        grid-template-areas:'author_date .'
-                            'news_header news_header'
-                            'description description'
-                            'txt_area txt_area';
-    }
-    #whiskas img{
-        height: 3.5vw;
-        width:5vw;
-    }
-    #whiskas{
-        display: flex;
-        justify-content: flex-start;
-        grid-area:whiskas;
-    }
 }

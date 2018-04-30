@@ -1,0 +1,84 @@
+@media screen and (max-width:768px){
+    p{
+        font-size: 2.2vw;
+    } 
+     h3{
+        font-size: 2.5vw;
+    }
+
+    .grid-container{
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
+        grid-template-rows: 0.08fr 0.3fr 0.3fr 0.3fr 0.1fr;
+        grid-template-areas: 'header header header header'
+                            '. first first .'
+                            '. second second .'
+                            '. third third .'
+                            'footer footer footer footer';
+    }
+
+    .news{
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: 0.03fr 0.05fr 1fr 0.2fr;
+        grid-template-areas:'author_date author_date'
+                            'news_header news_header'
+                            'description description'
+                            'txt_area txt_area';
+    }
+
+    header{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.1fr;
+        grid-template-areas:'whiskas'
+                            'header_buttons'
+    }
+
+    #whiskas{
+        display: grid;
+        grid-area:whiskas;
+        font-size: 4vw;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'name';
+        text-align: center;
+    }
+    #whiskas img{
+        display:none;
+    }
+    #name{
+        margin-left: 0;
+    }
+    .head_button p{
+        font-size: 6vw;
+        margin: 0;
+    }
+    .head_button{
+        border:0;
+        border-left: 1px solid #ffecf3;
+        border-right: 1px solid #ffecf3;
+        height:100% ;
+        width:50%;
+        margin-right: 0;
+        margin-top: 0;
+    }
+    #header_buttons{
+        height:100%;
+    }
+    
+    .news_header{
+        font-size: 3vw;
+        text-align: center;
+    }
+    /* .author_date{
+        width:100%;
+    } */
+    .description p{
+        word-spacing: 1px;
+    }
+    .description img{
+        float: none;
+        width:100%;
+    }
+}
