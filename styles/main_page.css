@@ -1,7 +1,9 @@
 @import url(global.css);
+
 @import url(main-desktop.css);
 @import url(main-tablet.css);
-@import url(main-mobile.css);
+@import url(main-mobile.css) (max-device-width:768px);
+@import url(main-mobile.css) (max-width:768px);
 
 #cat_div{
     grid-area: cat;

@@ -1,7 +1,9 @@
 @import url(global.css);
+
 @import url(news-desktop.css);
+@import url(news-mobile.css) (max-device-width:768px);
+@import url(news-mobile.css) (max-width:768px);
 @import url(news-tablet.css);
-@import url(news-mobile.css);
 
 .author_date{
     display: flex;

@@ -1,4 +1,4 @@
-@media screen and (max-width:768px){
+/* @media screen and (max-width: 768px) and { */
     p{
         font-size: 2vw;
     }
@@ -88,4 +88,4 @@
         color: #f0dae2;
         font-size: 5vw;
     }
-}
+/* } */

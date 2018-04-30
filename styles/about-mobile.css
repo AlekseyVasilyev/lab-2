@@ -1,4 +1,4 @@
-@media screen and (max-width:768px) {
+/* @media screen and (max-width:768px) { */
     p{
         font-size: 3vw;
     }
@@ -70,4 +70,4 @@
     border:1px solid black;
     box-shadow: 1px 1px 3px 1px #370b48;
     }
-}
+/* } */

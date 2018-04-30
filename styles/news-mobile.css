@@ -1,8 +1,8 @@
-@media screen and (max-width:768px){
+/* @media screen and (max-width:768px) and { */
     p{
         font-size: 2.2vw;
     } 
-     h3{
+    h3{
         font-size: 2.5vw;
     }
 
@@ -21,7 +21,7 @@
     .news{
         display: grid;
         grid-template-columns: 0.5fr 0.5fr;
-        grid-template-rows: 0.03fr 0.05fr 1fr 0.25fr;
+        grid-template-rows: 0.03fr 0.05fr 1fr 0.15fr;
         grid-template-areas:'author_date author_date'
                             'news_header news_header'
                             'description description'
@@ -62,7 +62,7 @@
     #header_buttons{
         height:100%;
     }
-    
+        
     .news_header{
         font-size: 3vw;
         text-align: center;
@@ -74,4 +74,7 @@
         float: none;
         width:100%;
     }
-}
+    .form_comment label{
+        font-size: 2vw;
+    }
+/* } */
