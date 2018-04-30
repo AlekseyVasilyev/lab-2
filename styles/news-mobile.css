@@ -8,9 +8,9 @@
 
     .grid-container{
         display: grid;
-        grid-row-gap: 40px;
+        grid-row-gap: 20px;
         grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
-        grid-template-rows: 0.06fr 0.4fr 0.4fr 0.4fr 0.1fr;
+        grid-template-rows: 0.07fr 0.7fr 0.7fr 0.7fr 0.1fr;
         grid-template-areas: 'header header header header'
                             '. first first .'
                             '. second second .'
@@ -20,8 +20,8 @@
 
     .news{
         display: grid;
-        grid-template-columns: 0.5fr 0.5fr;
-        grid-template-rows: 0.03fr 0.05fr 1fr 0.15fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.02fr 0.03fr 0.7fr 0.4fr;
         grid-template-areas:'author_date author_date'
                             'news_header news_header'
                             'description description'
@@ -70,9 +70,12 @@
     .description p{
         word-spacing: 1px;
     }
+    .description{
+        text-align: justify;
+    }
     .news_img{
-        float: none;
-        width:100%;
+        float:none;
+        width:80vw;
     }
     .form_comment label{
         font-size: 2vw;
