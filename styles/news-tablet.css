@@ -1,4 +1,4 @@
-@media screen and (min-width:769px) and (max-width:1023px){
+@media screen and (max-width:1023px) and (min-width:769px){
     p{
         font-size: 1.5vw;
     }
@@ -21,7 +21,7 @@
     .news{
         display: grid;
         grid-template-columns: 0.75fr 0.25fr;
-        grid-template-rows: 0.05fr 0.1fr 1fr 0.2fr;
+        grid-template-rows: 0.03fr 0.05fr 1fr 0.5fr;
         grid-template-areas:'author_date .'
                             'news_header news_header'
                             'description description'

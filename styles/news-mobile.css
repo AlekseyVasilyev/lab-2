@@ -1,4 +1,4 @@
-@media screen and (max-width:768px) and (max-device-width:768px){
+@media screen and (max-width:768px){
     p{
         font-size: 2.2vw;
     } 
@@ -8,9 +8,9 @@
 
     .grid-container{
         display: grid;
-        grid-gap: 15px;
+        grid-row-gap: 40px;
         grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
-        grid-template-rows: 0.08fr 0.4fr 0.4fr 0.4fr 0.1fr;
+        grid-template-rows: 0.06fr 0.4fr 0.4fr 0.4fr 0.1fr;
         grid-template-areas: 'header header header header'
                             '. first first .'
                             '. second second .'
@@ -21,7 +21,7 @@
     .news{
         display: grid;
         grid-template-columns: 0.5fr 0.5fr;
-        grid-template-rows: 0.03fr 0.05fr 1fr 1fr;
+        grid-template-rows: 0.03fr 0.05fr 1fr 0.25fr;
         grid-template-areas:'author_date author_date'
                             'news_header news_header'
                             'description description'
