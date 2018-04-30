@@ -6,7 +6,7 @@
 #cat_div{
     grid-area: cat;
 }
-#cat_div img{
+.background_cat{
     width: 100%;
 }
 #main{

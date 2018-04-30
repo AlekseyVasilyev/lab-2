@@ -1,11 +1,11 @@
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) and (max-device-width:768px){
     p{
         font-size: 3vw;
     }
     h3{
         font-size: 3vw;
     }
-    
+
     .grid-container{
         display: grid;
         grid-gap: 10px;
@@ -32,7 +32,7 @@
         grid-template-areas: 'name';
         text-align: center;
     }
-    #whiskas img{
+    .logo{
         display:none;
     }
     .head_button p{
@@ -45,8 +45,7 @@
         border-right: 1px solid #ffecf3;
         height:100% ;
         width:50%;
-        margin-right: 0;
-        margin-top: 0;
+        margin:0;
     }
 
     #first_element{
@@ -64,7 +63,7 @@
         grid-template-areas: '.company .'
                             '. links .';
     }
-    .worker img{
+    .avatar{
     width:25vw;
     height: 35vw;
     border-radius: 5px;

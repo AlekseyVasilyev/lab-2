@@ -20,7 +20,7 @@
     header{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0.1fr;
+        grid-template-rows: 100%;
         grid-template-areas:'whiskas header_buttons'
     }
 
@@ -30,20 +30,16 @@
         grid-area:whiskas;
         font-size: 3vw;
     }
-    #whiskas img{
-        height: 90%;
-        width:120px;
-    }
-    #name{
-        margin-left: 0;
+    .logo{
+        height: 7.5vw;
+        width:10vw;
     }
     .head_button{
         border:0;
         border-left: 1px solid #ffecf3;
         height:100% ;
         width:50%;
-        margin-right: 0;
-        margin-top: 0;
+        margin:0;
     }
     .head_button p{
         font-size: 5vw;
@@ -65,7 +61,7 @@
         grid-template-areas: '.company .'
                             '. links .';
     }
-    .worker img{
+    .avatar{
     width:25vw;
     height: 35vw;
     border-radius: 5px;

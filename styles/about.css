@@ -1,8 +1,8 @@
-@import url(../styles/global.css);
+@import url(global.css);
 
-@import url(../styles/about-desktop.css);
-@import url(../styles/about-tablet.css);
-@import url(../styles/about-mobile.css);
+@import url(about-desktop.css);
+@import url(about-tablet.css);
+@import url(about-mobile.css);
 
 #first_element{
     border-radius: 5px;

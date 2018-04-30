@@ -28,17 +28,9 @@
     margin-top:10px;
     width:100%;
     height:120px;
-    background-color: white;
-    border:1px solid #370b48;
     grid-area: txt_area;
 }
-
-.first{
-    grid-area: first;
-}
-.second{
-    grid-area: second;
-}
-.third{
-    grid-area: third;
+.form_comment{
+    width:100%;
+    height: 100%;
 }

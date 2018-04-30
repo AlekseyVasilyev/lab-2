@@ -23,7 +23,7 @@
         grid-template-rows: 100%;
         grid-template-areas:'whiskas . header_buttons'
     }
-    
+
     #name{
         font-size: 3vw;
     }
@@ -36,7 +36,7 @@
     .head_button p{
         font-size: 2.2vw;
     }
-    #whiskas img{
+    .logo{
         height: 3.5vw;
         width:5vw;
     }
@@ -53,7 +53,7 @@
         grid-template-columns: 0.5fr 0.5fr;
         grid-template-areas: 'company links'
     }
-    .worker img{
+    .avatar{
         width:15vw;
         height: 24vw;
         border-radius: 5px;

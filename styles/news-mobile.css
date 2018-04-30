@@ -1,4 +1,4 @@
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) and (max-device-width:768px){
     p{
         font-size: 2.2vw;
     } 
@@ -10,7 +10,7 @@
         display: grid;
         grid-gap: 15px;
         grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
-        grid-template-rows: 0.08fr 0.3fr 0.3fr 0.3fr 0.1fr;
+        grid-template-rows: 0.08fr 0.4fr 0.4fr 0.4fr 0.1fr;
         grid-template-areas: 'header header header header'
                             '. first first .'
                             '. second second .'
@@ -21,7 +21,7 @@
     .news{
         display: grid;
         grid-template-columns: 0.5fr 0.5fr;
-        grid-template-rows: 0.03fr 0.05fr 1fr 0.2fr;
+        grid-template-rows: 0.03fr 0.05fr 1fr 1fr;
         grid-template-areas:'author_date author_date'
                             'news_header news_header'
                             'description description'
@@ -44,11 +44,8 @@
         grid-template-areas: 'name';
         text-align: center;
     }
-    #whiskas img{
+    .logo{
         display:none;
-    }
-    #name{
-        margin-left: 0;
     }
     .head_button p{
         font-size: 6vw;
@@ -60,8 +57,7 @@
         border-right: 1px solid #ffecf3;
         height:100% ;
         width:50%;
-        margin-right: 0;
-        margin-top: 0;
+        margin:0;
     }
     #header_buttons{
         height:100%;
@@ -71,13 +67,10 @@
         font-size: 3vw;
         text-align: center;
     }
-    /* .author_date{
-        width:100%;
-    } */
     .description p{
         word-spacing: 1px;
     }
-    .description img{
+    .news_img{
         float: none;
         width:100%;
     }

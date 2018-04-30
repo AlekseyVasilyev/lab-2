@@ -1,4 +1,4 @@
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) and (max-device-width:768px){
     p{
         font-size: 2vw;
     }
@@ -10,7 +10,7 @@
         display:grid;
         grid-gap: 10px;
         grid-template-columns: 0.1fr 0.8fr 0.1fr;
-        grid-template-rows: 0.07fr 0.04fr 1fr 0.08fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.1fr;
+        grid-template-rows: 0.07fr 0.04fr 1fr 0.08fr 0.6fr 0.65fr 0.62fr 0.7fr 0.65fr 0.1fr;
         grid-template-areas: 'header header header'
                             '. . .'
                             'main main main'
@@ -21,6 +21,11 @@
                             '. fourth .'
                             '. fifth .'
                             'footer footer footer'
+    }
+    #main{
+        display:flex;
+        align-items: center;
+        flex-direction: column;
     }
 
     header{
@@ -39,11 +44,8 @@
         grid-template-areas: 'name';
         text-align: center;
     }
-    #whiskas img{
+    .logo{
         display:none;
-    }
-    #name{
-        margin-left: 0;
     }
     .head_button p{
         font-size: 6vw;
@@ -55,8 +57,7 @@
         border-right: 1px solid #ffecf3;
         height:100% ;
         width:50%;
-        margin-right: 0;
-        margin-top: 0;
+        margin:0;
     }
     #header_buttons{
         height:100%;
@@ -71,13 +72,13 @@
         background-color: #eed0db;
         font-size: 1.2vw;
     }
-    .cat_feed img{
+    .feed_img{
         height: 50vw;
         margin: 1% 20px ;
         width:35vw;
         float:left;
     } 
-    #cat_div img{
+    .background_cat{
         height:65vw;
     }
     #product p{
