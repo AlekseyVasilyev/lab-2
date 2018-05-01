@@ -1,9 +1,12 @@
 @import url(style.css);
 
-@import url(about-desktop.css);
-@import url(about-tablet.css);
-@import url(about-mobile.css) (max-device-width:768px);
+@import url(about-desktop.css) (min-width:1024px);
+
+@import url(about-tablet.css) (min-width:769px) and (max-width:1023px);
+@import url(about-tablet.css) (min-device-width:769px) and (max-device-width:1023px);
+
 @import url(about-mobile.css) (max-width:768px);
+@import url(about-mobile.css) (max-device-width:768px);
 
 #first_element{
     border-radius: 5px;
@@ -19,6 +22,9 @@
     align-items: center;
     flex-direction: column;
     margin:0 40px;
+}
+.worker p{
+    margin:5px 0 5px 0;
 }
 .about{
     display: flex;

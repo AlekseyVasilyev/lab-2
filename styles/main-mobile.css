@@ -1,15 +1,8 @@
-p{
-    font-size: 2vw;
-}
-h3{
-    font-size: 2.5vw;
-}
-
 .grid-container{
     display:grid;
     grid-gap: 10px;
     grid-template-columns: 0.1fr 0.8fr 0.1fr;
-    grid-template-rows: 0.07fr 0.04fr 1fr 0.08fr 0.6fr 0.65fr 0.62fr 0.7fr 0.65fr 0.1fr;
+    grid-template-rows: 0.07fr 0.04fr 1fr 0.04fr 0.47fr 0.6fr 0.55fr 0.63fr 0.6fr 0.07fr;
     grid-template-areas: 'header header header'
                         '. . .'
                         'main main main'
@@ -25,6 +18,9 @@ h3{
     display:flex;
     align-items: center;
     flex-direction: column;
+}
+#main p{
+    font-size:4vw;
 }
 
 header{
@@ -69,7 +65,9 @@ header{
     margin-top: 10px;
     border:2px solid #931773;
     background-color: #eed0db;
-    font-size: 1.2vw;
+}
+.cat_feed p{
+    font-size: 4vw;
 }
 .feed_img{
     height: 50vw;
@@ -86,4 +84,10 @@ header{
     font-weight: bold;
     color: #f0dae2;
     font-size: 5vw;
+}
+.contact p{
+    font-size:3vw;
+}
+h3{
+    font-size: 4vw;
 }

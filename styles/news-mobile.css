@@ -2,7 +2,7 @@
     display: grid;
     grid-row-gap: 30px;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.5fr 0.5fr 0.5fr 0.1fr;
+    grid-template-rows: 0.05fr 0.5fr 0.5fr 0.5fr 0.1fr;
     grid-template-areas: 'header'
                         'first'
                         'second'
@@ -13,7 +13,7 @@
 .news{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.01fr 0.03fr 0.6fr 0.4fr;
+    grid-template-rows: 0.01fr 0.03fr 0.3fr 0.25fr;
     grid-template-areas:'author_date'
                         'news_header'
                         'description'
@@ -58,20 +58,21 @@ header{
 .news_header{
     font-size: 3vw;
     text-align: center;
+    width:100vw;
 }
 .author_date p{
     font-size: 2vw;
 }
 .description p{
-    word-spacing: 1px;
-    font-size: 1.3vw;
+    font-size: 3vw;
+    width:100vw;
 }
 .description{
     text-align: justify;
 }
 .news_img{
     float:none;
-    width:100%;
+    width:100vw;
 }
 .form_comment label{
     font-size: 2vw;
