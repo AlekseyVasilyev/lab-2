@@ -1,4 +1,4 @@
-@import url(global.css);
+@import url(style.css);
 
 @import url(news-desktop.css);
 @import url(news-mobile.css) (max-device-width:768px);

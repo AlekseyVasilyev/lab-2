@@ -1,83 +1,81 @@
-/* @media screen and (max-width:768px) and { */
-    p{
-        font-size: 2.2vw;
-    } 
-    h3{
-        font-size: 2.5vw;
-    }
+.grid-container{
+    display: grid;
+    grid-row-gap: 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.5fr 0.5fr 0.5fr 0.1fr;
+    grid-template-areas: 'header'
+                        'first'
+                        'second'
+                        'third'
+                        'footer';
+}
 
-    .grid-container{
-        display: grid;
-        grid-row-gap: 20px;
-        grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
-        grid-template-rows: 0.07fr 0.7fr 0.7fr 0.7fr 0.1fr;
-        grid-template-areas: 'header header header header'
-                            '. first first .'
-                            '. second second .'
-                            '. third third .'
-                            'footer footer footer footer';
-    }
+.news{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.01fr 0.03fr 0.6fr 0.4fr;
+    grid-template-areas:'author_date'
+                        'news_header'
+                        'description'
+                        'txt_area';
+}
 
-    .news{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.02fr 0.03fr 0.7fr 0.4fr;
-        grid-template-areas:'author_date author_date'
-                            'news_header news_header'
-                            'description description'
-                            'txt_area txt_area';
-    }
+header{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.1fr;
+    grid-template-areas:'whiskas'
+                        'header_buttons'
+}
 
-    header{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.1fr 0.1fr;
-        grid-template-areas:'whiskas'
-                            'header_buttons'
-    }
-
-    #whiskas{
-        display: grid;
-        grid-area:whiskas;
-        font-size: 4vw;
-        grid-template-columns: 1fr;
-        grid-template-areas: 'name';
-        text-align: center;
-    }
-    .logo{
-        display:none;
-    }
-    .head_button p{
-        font-size: 6vw;
-        margin: 0;
-    }
-    .head_button{
-        border:0;
-        border-left: 1px solid #ffecf3;
-        border-right: 1px solid #ffecf3;
-        height:100% ;
-        width:50%;
-        margin:0;
-    }
-    #header_buttons{
-        height:100%;
-    }
-        
-    .news_header{
-        font-size: 3vw;
-        text-align: center;
-    }
-    .description p{
-        word-spacing: 1px;
-    }
-    .description{
-        text-align: justify;
-    }
-    .news_img{
-        float:none;
-        width:80vw;
-    }
-    .form_comment label{
-        font-size: 2vw;
-    }
-/* } */
+#whiskas{
+    display: grid;
+    grid-area:whiskas;
+    font-size: 4vw;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'name';
+    text-align: center;
+}
+.logo{
+    display:none;
+}
+.head_button p{
+    font-size: 6vw;
+    margin: 0;
+}
+.head_button{
+    border:0;
+    border-left: 1px solid #ffecf3;
+    border-right: 1px solid #ffecf3;
+    height:100% ;
+    width:50%;
+    margin:0;
+}
+#header_buttons{
+    height:100%;
+}
+    
+.news_header{
+    font-size: 3vw;
+    text-align: center;
+}
+.author_date p{
+    font-size: 2vw;
+}
+.description p{
+    word-spacing: 1px;
+    font-size: 1.3vw;
+}
+.description{
+    text-align: justify;
+}
+.news_img{
+    float:none;
+    width:100%;
+}
+.form_comment label{
+    font-size: 2vw;
+}
+.contact{
+    font-size: 3vw;
+}
