@@ -7,196 +7,114 @@
         <meta name="author" content="Васильев Алексей">
         <meta name="description" content="Новости Вискас">
         <meta name="keywords" content="новости, интересные статьи, вискас, whiskas">
-        <link rel="stylesheet" href="../styles/news.css">
+        <link rel="stylesheet" href="../styles/style-news.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         <link rel="shortcut icon" href="../assets/logo.png" type="text/x-icon">
         <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     </head>
-    <body class="grid-container">
-        <header>
-            <div id="whiskas">
-                <img class="logo" src="../assets/logo.png">
-                <a href="../index.html"><h1 id="name">Whiskas</h1></a>
+    <!-- class="container p-0" -->
+    <body >
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid" > 
+            <img class="logo" src="../assets/logo.png">
+            <a class="navbar-brand p-0" href="../index.html" style="color: #fdebf2"><h1>Whiskas</h1></a>
+        <!-- </div> -->
+            <div class="collapse navbar-toggleable-xs d-md-inline-block align-top" id="exCollapsingNavbar">
+                <ul class="navbar-nav"> 
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="news.html">Новости</a> 
+                    </li> 
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="../index.html">Продукция</a>  
+                    </li> 
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="about.html">О нас</a> 
+                    </li> 
+                </ul>
             </div>
-            <div id="header_buttons">
-                <div class="head_button">
-                    <a href="news.html"><p>Новости</p></a>
+            <button class="navbar-toggler d-md-none d-lg-none align-top hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" 
+            aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+        </nav>
+        <div class="news container">
+            <div class="row">
+                <div class="author_date col-11 mx-auto">
+                    <p>Жукова Елена Вячеславовна</p>
+                    <p>8 февраля 2018г.</p>
                 </div>
-                <div class="head_button">
-                    <a href="about.html"><p>О нас</p></a>
-                </div>
-            </div>
-        </header>
-        <div class="news first">
-            <div class="author_date">
-                <p>Жукова Елена Вячеславовна</p>
-                <p>8 февраля 2018г.</p>
             </div>
             <h3 class="news_header">Мифы о корме для кошек</h3>
-            <div class="description">
-                <img class="news_img" src="../assets/news1.png">
-                <p><span>Миф № 1. В кормах среднего ценового сегмента используется сырье низкого качества</span></p>
-                <p>
-                    Это не так. Если говорить про Whiskas, то основу готовых кормов составляет натуральное мясо. 
-                    По типу питания кошки являются истинными плотоядными, а это значит, что в их рационе обязательно 
-                    должны присутствовать продукты животного происхождения. Как правило, в кормах используются говядина, 
-                    курица или рыба, такое гипоаллергенное мясо, как ягненок и индейка, и субпродукты, — печень, почки, сердце и другие.
+            <div class="description row">
+                <img class="news_img col-11 mx-auto" src="../assets/news1.1.png">
+                <p class="col-10 mx-auto">
+                    Существуют разные мифы о доступных кормах, как Whiskas. Принимая их за чистую монету, многие 
+                    владельцы питомцев решают отказаться от готового рациона в пользу еды со стола или более дорогого 
+                    корма. Но стоит ли верить тому, что говорят? Давайте разберемся.
                 </p>
-                <p><span>Миф № 2. К корму нужно добавлять домашнюю еду</span></p>
-                <p>
-                    Этот миф вытекает из первого неверного убеждения, что готовый корм имеет низкую пищевую ценность 
-                    и нуждается в дополнительном источнике полезных веществ — сыром мясе, твороге, кашах.
-                    Большинство существующих сегодня кормов — полнорационные и сбалансированные. Они содержат все необходимые кошке 
-                    вещества — макронутриенты (белки, жиры, углеводы), таурин, витамины A и E, цинк, кальций, фосфор и так далее. 
-                    Эти вещества в кормах находятся в достаточном для кошки количестве и сбалансированы лучше, чем в домашнем рационе.
-                </p>
-                <p><span>Миф № 3. Ветеринарные врачи не рекомендуют Whiskas</span></p>
-                <p>
-                    Ветеринарные врачи принимают непосредственное участие в разработке состава и рецептуры кормов Whiskas. Более 50 лет 
-                    в научно-исследовательском Центре питания домашних животных WALTHAM сотни экспертов в области питания и здоровья домашних 
-                    животных разрабатывают рекомендации к рецептурам полнорационных кормов, в том числе и для Whiskas.
-                    Во всем мире этот корм признан ветеринарным сообществом как один из самых качественных в своей категории. 
-                    Признание подтверждает и международное ветеринарное свидетельство, гарантирующее качество и безопасность корма. 
-                </p>
-            </div>
-            <div class="txt_area">
-                <form method="GET" class="form_comment">
-                    <p><b>Оставьте комментарий</b></p>
-                    <div>
-                        <label>Введите имя:
-                            <input type="text" placeholder="Имя" required tabindex="1" name="name">
-                        </label>
-                    </div>
-                    <div>
-                        <label><p>Текст комментария:</p>
-                            <textarea class="comment" wrap="hard" cols="50" rows="5" name="comment" tabindex="2" required></textarea>
-                        </label>
-                    </div>
-                    <button type="submit">Отправить</button>
-                    <button type="reset">Очистить</button>
-                </form>
+                <div class="col-10 mx-auto news-link">
+                    <a href="news_1.html" class="btn_pink">Читать подробнее</a>
+                </div>
             </div>
         </div>
-        <div class="news second">
-            <div class="author_date">
-                <p>Алексей Сулин</p>
-                <p>8 февраля 2018г.</p>
+        <hr>
+        <div class="news container">
+            <div class="row">
+                <div class="author_date col-11 mx-auto">
+                    <p>Алексей Сулин</p>
+                    <p>8 февраля 2018г.</p>
+                </div>
             </div>
-            <h3 class="news_header">Почему в производстве кормов для домашних животных важен научный подход?</h3>
-            <div class="description">
-                <img class="news_img" src="../assets/news2.jpg">
-                <p><span>1. Кошкам необходим таурин: во влажном корме его должно быть больше, чем в сухом.</span></p>
-                <p>
-                    Таурин — жизненно важная и незаменимая для здоровья кошек сульфокислота. В отличие от собак, которые могут 
-                    синтезировать таурин из других веществ (к примеру, из таких аминокислот, как метионин или цистеин), кошки не 
-                    способны вырабатывать его самостоятельно. Именно поэтому таурин должен поступать в их организм в достаточном 
-                    количестве вместе с пищей. Недостаток таурина приводит к серьезным последствиям: нарушениям работы сердца, 
-                    органов зрения, нервной и пищеварительной систем.
+            <h3 class="news_header col-11 mx-auto">Почему в производстве кормов для домашних животных важен научный подход?</h3>
+            <div class="description row">
+                <img class="news_img col-11 mx-auto" src="../assets/news2.1.jpg">
+                <p class="col-10 mx-auto">
+                    Кошки, как и люди, ежедневно нуждаются в получении определенного количества питательных веществ для поддержания 
+                    работы своего организма. Благодаря Центру питания домашних животных WALTHAM, существующему уже более 50 лет, 
+                    Whiskas создает сбалансированное и полноценное питание для питомцев разных возрастов. Мы контролируем более 
+                    40 параметров, для того чтобы полностью обеспечить потребности вашего питомца в питательных веществах!
                 </p>
-                <p><span>2. Потребность кошки в калориях не зависит напрямую от веса животного.</span></p>
-                <p>
-                    По сравнению со взрослой кошкой котенок должен ежедневно потреблять значительно больше калорий для поддержания своего 
-                    организма в период активного роста. Взрослой особи в среднем нужно около 208 ккал в день, в то время как котенку до года — почти в 1,5 раза больше.
-                    Рацион стерилизованного или кастрированного питомца ввиду замедленного метаболизма должен быть на 20% менее 
-                    калорийным по сравнению с ежедневной нормой обычной кошки.
-                    Благодаря WALTHAM, были определены дневные нормы потребления калорий для котят, взрослых, пожилых, а также 
-                    стерилизованных и кастрированных кошек, что нашло отражение в рецептуре рационов Whiskas для животных 
-                    разных возрастов или с особыми потребностями.
-                </p>
-                <p><span>3. При достаточном количестве витамина D кошкам и котятам нужно меньше кальция, чем считалось ранее.</span></p>
-                <p>
-                    Витамин D — важный элемент, который способствует усвоению кальция и фосфора организмом. Его нехватка может вызвать 
-                    рахит и другие тяжелые заболевания. Но его присутствие в организме сверх нормы еще опаснее, так как грозит интоксикацией. 
-                    Поэтому следование рекомендациям по нормам этого витамина для питомцев разных возрастов — один из важнейших этапов 
-                    разработки готового рациона. Баланс витамина D, кальция и фосфора должен быть строго выверенным. Мы позаботились о 
-                    том, чтобы в кормах Whiskas было достаточно витамина D, кальция и фосфора для нормального роста и развития вашего питомца.  
-                </p>
-            </div>
-            <div class="txt_area">
-                <form method="GET" class="form_comment">
-                    <p><b>Оставьте комментарий</b></p>
-                    <div>
-                        <label>Введите имя:
-                            <input type="text" placeholder="Имя" required tabindex="1" name="name">
-                        </label>
-                    </div>
-                    <div>
-                        <label><p>Текст комментария:</p>
-                            <textarea class="comment" wrap="hard" cols="50" rows="5" name="comment" tabindex="2" required></textarea>
-                        </label>
-                    </div>
-                    <button type="submit">Отправить</button>
-                    <button type="reset">Очистить</button>
-                </form>
+                <div class="col-10 mx-auto news-link">
+                    <a href="news_2.html" class="btn_pink">Читать подробнее</a>
+                </div>
             </div>
         </div>
-        <div class="news third">
-            <div class="author_date">
-                <p>Серёжина Людмила Абрамовна</p>
-                <p>16 марта 2018г.</p>
+        <hr>
+        <div class="news container">
+            <div class="row">
+                <div class="author_date col-11 mx-auto">
+                    <p>Серёжина Людмила Абрамовна</p>
+                    <p>16 марта 2018г.</p>
+                </div>
             </div>
             <h3 class="news_header">Эволюция питания кошки</h3>
-            <div class="description">
-                <img class="news_img" src="../assets/news3.jpg">
-                <p><span>Мясо и субпродукты</span></p>
-                <p>
-                    Поймав добычу в дикой природе, кошка съедала ее целиком, со всеми внутренними органами — сердцем, печенью, 
-                    почками и желудком. Эти части животного обогащали организм кошки витаминами и минеральными веществами, 
-                    которых недостаточно в обычном мясе. В печени содержится больше витамина A и аминокислот, в почках — витаминов 
-                    группы B, в сердце — незаменимая аминокислота таурин. В готовые корма также добавляют 
-                    субпродукты — это позволяет сделать их более питательными и сбалансированными.
+            <div class="description row">
+                <img class="news_img col-11 mx-auto" src="../assets/news3.1.jpg">
+                <p class="col-10 mx-auto">
+                    Одомашнивание кошек связывают с началом развития земледелия более 9 тысяч лет назад. Стараясь защитить запасы 
+                    зерна от грызунов, люди приманивали диких степных кошек ближе к своим поселениям. Взаимовыгодный союз превратился в долгую 
+                    дружбу, которая, несмотря на смену образа жизни, не повлияла на природные инстинкты и пищевые потребности последних.
                 </p>
-                <p><span>Злаки как источник энергии</span></p>
-                <p>
-                    Кошки съедали и то, что находились в небольшом мышином желудке, — зерна и растительную пищу. Таким образом 
-                    они получали небольшое количество ферментированной клетчатки и углеводов, которые служили для них дополнительным 
-                    источником энергии. Кроме того, клетчатка способствует улучшению пищеварения и перистальтики кишечника хищника. В 
-                    состав готовых кормов также включены злаки и овощи — небольшое содержание этих ингредиентов будет полезным для кошки.
-                </p>
-                <p><span>Красота и здоровье шерсти</span></p>
-                <p>
-                    Шкурки мелких грызунов помогали кошке поддерживать собственную шерсть в хорошем состоянии. В них содержатся полезные 
-                    микроэлементы и такие аминокислоты, как цистеин и метионин. Именно они участвуют в синтезе рогового вещества — кератина, 
-                    влияющего на эластичность кожи и гладкость шерсти животного.
-                    В большом количестве эти аминокислоты содержатся в рыбе, пшеничном и кукурузном глютене − все они входят в 
-                    состав готовых кормов. В комплексе с другими компонентами, такими как Омега-6 жирные кислоты, они обеспечивают 
-                    полноценный уход за шерстью питомца.
-                </p>
-                <p><span>Кости как источник кальция</span></p>
-                <p>
-                    Кости мыши служили прекрасным источником кальция для хищника. Они тоньше и мягче рыбьих или куриных костей, 
-                    поэтому полностью переваривались в желудке кошки, не повреждая его и кишечник. Кости других более крупных 
-                    животных для кошки опасны. Особенно это касается трубчатых костей, которые они не разгрызают полностью. Такие 
-                    кости могут поранить стенки органов пищеварения, вызвать кишечную непроходимость или застрять в горле питомца.
-                </p>
-            </div>
-            <div class="txt_area">
-                <form method="GET" class="form_comment">
-                    <p><b>Оставьте комментарий</b></p>
-                    <div>
-                        <label>Введите имя:
-                            <input type="text" placeholder="Имя" required tabindex="1" name="name">
-                        </label>
-                    </div>
-                    <div>
-                        <label><p>Текст комментария:</p>
-                            <textarea class="comment" wrap="hard" cols="50" rows="5" name="comment" tabindex="2" required></textarea>
-                        </label>
-                    </div>
-                    <button type="submit">Отправить</button>
-                    <button type="reset">Очистить</button>
-                </form>
+                <div class="col-10 mx-auto news-link">
+                    <a href="news_3.html" class="btn_pink">Читать подробнее</a>
+                </div>
             </div>
         </div>
-        <div id="footer">
-            <div class="contact">
+        <hr>
+        <div class="row footer m-0">
+            <div class="contact col-6 p-0">
                 <p>Адрес: Студенческая, 7, Ижевск, Pеспублика Удмуртия, 426069</p>
                 <p>Email: vatruzka99@mail.ru</p>
             </div>
-            <div class="contact">
+            <div class="contact col-6 p-0">
                 <p>Телефон: +7 951 199 18 71</p>
-                <p>Прочие ссылки:https://vk.com/id143300347</p>
+                <p>Прочие ссылки: https://vk.com/id143300347</p>
             </div>
         </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     </body>
 </html>
