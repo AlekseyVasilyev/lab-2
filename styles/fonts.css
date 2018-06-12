@@ -1,6 +1,7 @@
 @media (max-width:991px){
     .description h3{
         margin-top:10px;
+        font-size: 2.6vw;
     }
     #main p{
         font-size:2vw;
@@ -24,7 +25,7 @@
 }
 @media (min-width:768px) and (max-width:991px){
     .author_date p, .footer, .btn_pink{
-        font-size: 1.5vw;
+        font-size: 1.6vw;
     }
     .navbar-nav li{
         font-size: 20px;
