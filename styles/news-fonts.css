@@ -1,0 +1,36 @@
+@media (min-width:768px) and (max-width:991px){
+    .author_date p, .footer, .btn_pink{
+        font-size: 1.5vw;
+    }
+    .navbar-nav li{
+        font-size: 20px;
+    }
+    .description p{
+        font-size: 1.8vw;
+    }
+    .news_header{
+        font-size: 3vw;
+    }
+    .description h3{
+        margin-top:10px;
+        font-size: 1.9vw;
+    }
+}
+@media (max-width:767px){
+    .author_date p, .footer, .btn_pink{
+        font-size: 2vw;
+    }
+    .navbar-nav li{
+        font-size: 25px;
+    }
+    .description p{
+        font-size: 2.1vw;
+    }
+    .news_header{
+        font-size: 3.5vw;
+    }
+    .description h3{
+        margin-top:10px;
+        font-size: 1.9vw;
+    }
+}

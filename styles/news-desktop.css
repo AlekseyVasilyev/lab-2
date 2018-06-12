@@ -1,70 +1,21 @@
-p{
+@import url(style-desktop.css);
+
+.container{
+    max-width: 80%!important;
+    margin-top:4vw;
+}
+.btn_pink{
+    padding: 0.6vw 0.9vw;
+}
+.description h3{
+    font-size: 1.9vw;
+}
+.author_date p, .footer, .btn_pink{
     font-size: 1.2vw;
 }
-h3{
-    font-size: 1.7vw;
+.description p{
+    font-size: 1.3vw;
 }
-
-.grid-container{
-    display: grid;
-    grid-row-gap: 40px;
-    grid-template-columns: 0.1fr 0.4fr 0.4fr 0.1fr;
-    grid-template-rows: 0.02fr 0.6fr 0.6fr 0.6fr 0.1fr;
-    grid-template-areas: 'header header header header'
-                        '. first first .'
-                        '. second second .'
-                        '. third third .'
-                        'footer footer footer footer';
-}
-
-header{
-    display: grid;
-    grid-template-columns: 0.3fr 0.4fr 0.3fr;
-    grid-template-rows: 100%;
-    grid-template-areas:'whiskas . header_buttons'
-}
-
-.news{
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-    grid-template-rows: 0.05fr 0.1fr 1fr 0.4fr;
-    grid-template-areas:'author_date .'
-                        'news_header news_header'
-                        'description description'
-                        'txt_area txt_area';
-}
-
-#whiskas{
-    display: flex;
-    justify-content: flex-start;
-    grid-area:whiskas;
-}
-.logo{
-    height: 3.5vw;
-    width:5vw;
-}
-.head_button{
-    height: 2.8vw;
-    width:60%;
-    margin-right: 30px;
-    margin-top: 3px;
-}
-.head_button p{
-    font-size: 2.2vw;
-}
-#name{
-    font-size: 3vw;
-}
-
-.form_comment label{
-    font-size: 1.2vw;
-}
-.form_comment p{
-    margin:5px 0 5px 0;
-}
-.news_img{
-    width:50%;
-    float: left;
-    margin:0 10px 0 0;
-    box-shadow: 1px 1px 3px 0;
+.news_header{
+    font-size: 2.5vw;
 }

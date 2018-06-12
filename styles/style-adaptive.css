@@ -1,0 +1,30 @@
+@import url(style.css);
+
+nav{
+    height: 50px;
+    background-color: #a51881;
+}
+.navbar-collapse{
+    background-color: #a51881;
+}
+.navbar-nav li{
+    border:none;
+    width:80%;
+    border-bottom:1px solid #c4b0b7;
+}
+.navbar-brand h1{
+    font-weight: 600;
+    margin:-0.1vw 2px 0 0;
+}
+#dropDownMenu{
+    position: absolute;
+    top:50px;
+    width:100%;
+    border-top:1px solid #c4b0b7;
+}
+.navbar-toggler{
+    float: right;
+}
+.logo{
+    height:46px;
+}

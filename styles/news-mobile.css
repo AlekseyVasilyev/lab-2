@@ -1,82 +1,14 @@
-.grid-container{
-    display: grid;
-    grid-row-gap: 30px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.05fr 0.5fr 0.5fr 0.5fr 0.1fr;
-    grid-template-areas: 'header'
-                        'first'
-                        'second'
-                        'third'
-                        'footer';
-}
+@import url(style-adaptive.css);
 
-.news{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.01fr 0.03fr 0.3fr 0.25fr;
-    grid-template-areas:'author_date'
-                        'news_header'
-                        'description'
-                        'txt_area';
+.btn_pink{
+    padding: 6px 12px;
 }
-
-header{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.1fr;
-    grid-template-areas:'whiskas'
-                        'header_buttons'
+.container{
+    margin-top:45px;
 }
-
-#whiskas{
-    display: grid;
-    grid-area:whiskas;
-    font-size: 4vw;
-    grid-template-columns: 1fr;
-    grid-template-areas: 'name';
-    text-align: center;
+form p{
+    font-size:2.2vw;
 }
-.logo{
-    display:none;
-}
-.head_button p{
-    font-size: 6vw;
-    margin: 0;
-}
-.head_button{
-    border:0;
-    border-left: 1px solid #ffecf3;
-    border-right: 1px solid #ffecf3;
-    height:100% ;
-    width:50%;
-    margin:0;
-}
-#header_buttons{
-    height:100%;
-}
-    
-.news_header{
-    font-size: 3vw;
-    text-align: center;
-    width:100vw;
-}
-.author_date p{
-    font-size: 2vw;
-}
-.description p{
-    font-size: 3vw;
-    width:100vw;
-}
-.description{
-    text-align: justify;
-}
-.news_img{
-    float:none;
-    width:100vw;
-}
-.form_comment label{
-    font-size: 2vw;
-}
-.contact{
-    font-size: 3vw;
+label{
+    font-size:2vw;
 }

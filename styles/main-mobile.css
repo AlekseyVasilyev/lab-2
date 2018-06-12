@@ -1,93 +1,36 @@
-.grid-container{
-    display:grid;
-    grid-gap: 10px;
-    grid-template-columns: 0.1fr 0.8fr 0.1fr;
-    grid-template-rows: 0.03fr 0.04fr 1fr 0.04fr 0.47fr 0.6fr 0.55fr 0.63fr 0.6fr 0.07fr;
-    grid-template-areas: 'header header header'
-                        '. . .'
-                        'main main main'
-                        'product product product'
-                        '. first .'
-                        '. second .'
-                        '. third .'
-                        '. fourth .'
-                        '. fifth .'
-                        'footer footer footer'
+@import url(style-adaptive.css);
+
+.background_cat{
+    height:65vw;
 }
 #main{
-    display:flex;
-    align-items: center;
-    flex-direction: column;
+    margin-top:60px;
 }
 #main p{
-    font-size:4vw;
+    font-size:2vw;
 }
-
-header{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.1fr;
-    grid-template-areas:'whiskas'
-                        'header_buttons'
+.headline{
+    font-size:2.5vw;
 }
-
-#whiskas{
-    display: grid;
-    grid-area:whiskas;
-    font-size: 4vw;
-    grid-template-columns: 1fr;
-    grid-template-areas: 'name';
-    text-align: center;
-}
-.logo{
-    display:none;
-}
-.head_button p{
-    font-size: 6vw;
-    margin: 0;
-}
-.head_button{
-    border:0;
-    border-left: 1px solid #ffecf3;
-    border-right: 1px solid #ffecf3;
-    height:100% ;
-    width:50%;
-    margin:0;
-}
-#header_buttons{
-    height:100%;
-}
-
 .cat_feed{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 10px;
     border:2px solid #931773;
     background-color: #eed0db;
 }
+.cat_feed h3{
+    font-size:2.3vw;
+    font-weight: 700;
+}
 .cat_feed p{
-    font-size: 4vw;
+    font-size: 1.6vw;
 }
 .feed_img{
-    height: 50vw;
+    height: 30vw;
     margin: 1% 20px ;
-    width:35vw;
-    float:left;
-} 
-.background_cat{
-    height:65vw;
+    width:20vw;
 }
 #product p{
-    margin:2% 0 2% 0;
-    letter-spacing: 3px;
-    font-weight: bold;
     color: #f0dae2;
-    font-size: 5vw;
-}
-.contact p{
-    font-size:3vw;
-}
-h3{
-    font-size: 4vw;
+    font-size: 3vw;
 }

@@ -1,61 +1,15 @@
-p{
+@import url(style-desktop.css);
+
+.main{
+    margin-top: 4.5vw;
+}
+.main p{
     font-size: 1.2vw;
 }
-h3{
-    font-size: 1.7vw;
-}
-
-.grid-container{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 0.05fr 0.45fr 0.45fr 0.05fr;
-    grid-template-rows: 0.1fr 1fr 0.5fr 80px;
-    grid-template-areas: 'header header header header'
-                        '. first-element first-element .'
-                        '. second-element second-element .'
-                        'footer footer footer footer';
-}
-
-header{
-    display: grid;
-    grid-template-columns: 0.3fr 0.4fr 0.3fr;
-    grid-template-rows: 100%;
-    grid-template-areas:'whiskas . header_buttons'
-}
-
-#name{
-    font-size: 3vw;
-}
-.head_button{
-    height: 2.8vw;
-    width:60%;
-    margin-right: 30px;
-    margin-top: 3px;
-}
-.head_button p{
-    font-size: 2.2vw;
-}
-.logo{
-    height: 3.5vw;
-    width:5vw;
-}
-
-#first_element{
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
-    grid-template-rows: 80px 1fr;
-    grid-template-areas: '. headline headline .'
-                        'second first third fourth'
-}
-#second_element{
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-    grid-template-areas: 'company links'
+.main h3{
+    font-size: 2.5vw;
 }
 .avatar{
     width:15vw;
-    height: 24vw;
-    border-radius: 5px;
-    border:1px solid black;
-    box-shadow: 1px 1px 3px 1px #370b48;
+    height: 23vw;
 }
