@@ -1,0 +1,7 @@
+@import url(style-desktop.css) (min-width:991px);
+@import url(style-adaptive.css) (max-width:990px);
+
+.map{
+    margin-top:55px;
+    margin-bottom:50px;
+}
