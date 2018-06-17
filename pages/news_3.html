@@ -15,41 +15,31 @@
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     </head>
     <body class="grid-container">
-        <nav class="navbar navbar-expand-lg flex-nowrap navbar-dark container-fluid position-fixed" > 
+        <nav id="nav" :class="navClass.mainNav"> 
             <div>
                 <img class="logo" src="../assets/logo.png">
                 <a class="navbar-brand p-0" href="../index.html" style="color: #fdebf2"><h1>Whiskas</h1></a>
             </div>
-            <button class="navbar-toggler d-lg-none hidden-sm-up" type="button" data-toggle="collapse" data-target="#dropDownMenu" 
-            aria-controls="dropDownMenu position-static" aria-expanded="false" aria-label="Toggle navigation">
+            <button type="button" class="navbar-toggler hidden-lg-up" data-toggle="collapse" data-target="#dropDownMenu" aria-expanded="false">
                 &#9776;
             </button>
-            <div class="navbar-collapse collapse in navbar-toggleable-sm d-lg-inline-block" id="dropDownMenu">
+            <div :class="navClass.menu" id="dropDownMenu">
                 <ul class="navbar-nav">
-                    <li class="nav-item active mx-auto"> 
-                        <a class="nav-link" href="news.html">Новости</a> 
-                    </li>
-                    <li class="nav-item mx-auto"> 
-                        <a class="nav-link" href="../index.html">Продукция</a>  
-                    </li>
-                    <li class="nav-item mx-auto"> 
-                        <a class="nav-link" href="maps.html">Карта магазинов</a> 
-                    </li>
-                    <li class="nav-item mx-auto"> 
-                        <a class="nav-link" href="about.html">О нас</a> 
+                    <li class="nav-item mx-auto" v-for="item in url"> 
+                        <li-item v-bind:href="item.href" v-bind:todo="item"></li-item>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div class="container">
+
+        <div id="main" class="container">
             <div class="row">
                 <div class="author_date col-md-8 d-flex">
-                    <p>Серёжина Людмила Абрамовна</p>
-                    <p>16 марта 2018г.</p>
+                    <p v-for="val in authors[2]">{{ val }}</p>
                 </div>
-                <div class="col-12"><h3 class="news_header">Эволюция питания кошки</h3></div>
+                <div class="col-12"><h3 class="news_header">{{ headers[2].title }}</h3></div>
                 <div class="description col-12">
-                    <img class="news_img" src="../assets/news3.1.jpg">
+                    <news-img v-bind:src="headers[2].src"></news-img>
                     <h3><span>Мышь и организм кошек</span></h3>
                     <p>
                         В отличие от собак, которые за время соседства с человеком потеряли общие черты со своим предком — 
@@ -137,19 +127,21 @@
                 </div>
             </div>
         </div>
+
         <div class="row footer m-0">
-            <div class="contact col-6 p-0">
-                <p>Адрес: Студенческая, 7, Ижевск, Pеспублика Удмуртия, 426069</p>
-                <p>Email: vatruzka99@mail.ru</p>
+            <div :class="footerStyle.footer">
+                <p v-for="link in inf[0]">{{ link }}</p>
             </div>
-            <div class="contact col-6 p-0">
-                <p>Телефон: +7 951 199 18 71</p>
-                <p>Прочие ссылки: https://vk.com/id143300347</p>
+            <div :class="footerStyle.footer">
+                <p v-for="link in inf[1]">{{ link }}</p>
             </div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="../scripts/main.js"></script>
     </body>
 </html>

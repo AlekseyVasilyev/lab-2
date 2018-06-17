@@ -8,15 +8,6 @@
     font-weight: 700;
     text-align: center;
 }
-#product{
-    text-align: center;
-    background-color: #931773;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-weight: 600;
-    color:#f0dae2;
-    letter-spacing: 3px;
-}
 .description{
     text-align: justify;
     font-size: 1.1vw;
@@ -24,16 +15,4 @@
 .description p{
     margin:0;
     color:rgb(53, 53, 53);
-}
-.cat_feed h3{
-    margin-top: 10px;
-}
-.cat_feed{
-    display: flex;
-    margin-top: 10px;
-    border:2px solid #931773;
-    background-color: #eed0db;
-}
-.cat_feed p{
-    margin:0;
 }

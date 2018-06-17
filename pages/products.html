@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Whiskas</title>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta name="author" content="Васильев Алексей">
+        <meta name="description" content="Корм Whiskas">
+        <meta name="keywords" content="whiskas, кошачий корм">
+        <link rel="stylesheet" href="../styles/products.css">
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <link rel="shortcut icon" href="../assets/logo.png" type="text/x-icon">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav id="nav" :class="navClass.mainNav"> 
+            <div>
+                <img class="logo" src="../assets/logo.png">
+                <a class="navbar-brand p-0" href="../index.html" style="color: #fdebf2"><h1>Whiskas</h1></a>
+            </div>
+            <button type="button" class="navbar-toggler hidden-lg-up" data-toggle="collapse" data-target="#dropDownMenu" aria-expanded="false">
+                &#9776;
+            </button>
+            <div :class="navClass.menu" id="dropDownMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-auto" v-for="item in url"> 
+                        <li-item v-bind:href="item.href" v-bind:todo="item"></li-item>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid" id="main">
+            <div class="row">
+                <div class="col-lg-8 col-md-9 col-sm-10 mx-auto" id="product">
+                    <p>Наша продукция:</p>
+                </div>
+                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
+                    <img class="feed_img" :src="feed[0].img">
+                    <div>
+                        <h3>{{ feed[0].header }}</h3>
+                        <p>{{ feed[0].description }}</p>
+                        <p><span>Состав:</span></p>
+                        <p>{{ feed[0].composition }}</p>
+                    </div>
+                </div>
+                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
+                    <img class="feed_img" :src="feed[1].img">
+                    <div>
+                        <h3>{{ feed[1].header }}</h3>
+                        <p>{{ feed[1].description }}</p>
+                        <p><span>Состав:</span></p>
+                        <p>{{ feed[1].composition }}</p>
+                    </div>
+                </div>
+                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
+                    <img class="feed_img" :src="feed[2].img">
+                    <div>
+                        <h3>{{ feed[2].header }}</h3>
+                        <p>{{ feed[2].description }}</p>
+                        <p><span>Состав:</span></p>
+                        <p>{{ feed[2].composition }}</p>
+                    </div>
+                </div>
+                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
+                    <img class="feed_img" :src="feed[3].img">
+                    <div>
+                        <h3>{{ feed[3].header }}</h3>
+                        <p>{{ feed[3].description }}</p>
+                        <p><span>Состав:</span></p>
+                        <p>{{ feed[3].composition }}</p>
+                    </div>
+                </div>
+                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
+                    <img class="feed_img" :src="feed[4].img">
+                    <div>
+                        <h3>{{ feed[4].header }}</h3>
+                        <p>{{ feed[4].description }}</p>
+                        <p><span>Состав:</span></p>
+                        <p>{{ feed[4].composition }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer m-0">
+            <div :class="footerStyle.footer">
+                <p v-for="link in inf[0]">{{ link }}</p>
+            </div>
+            <div :class="footerStyle.footer">
+                <p v-for="link in inf[1]">{{ link }}</p>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="../scripts/main.js"></script>
+    </body>
+</html>
