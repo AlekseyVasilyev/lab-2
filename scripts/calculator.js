@@ -143,49 +143,81 @@ var main = new Vue({
             {
                 if(this.selectFeedType.id == 0)
                 {
-                    if(this.selectKittyMonths.id<6)
-                        return ((45 + 5 * this.selectKittyMonths.months).toFixed(1) + 'гр сухого корма')
+                    if(this.selectKittyMonths.id<5)
+                        return ((30 + 5 * this.selectKittyMonths.months).toFixed(1) + 'гр сухого корма')
                     else
-                        return ((65 + this.selectKittyMonths.months).toFixed(1) + 'гр сухого корма')
+                        return ((55 + this.selectKittyMonths.months).toFixed(1) + 'гр сухого корма')
                 }
                 else if(this.selectFeedType.id == 1)
                 {
-                    if(this.selectKittyMonths.id<4) 
-                        return ('1 пачка влажного корма + ' + (30 + 5 * this.selectKittyMonths.months).toFixed(1) + 'гр сухого')
-                    else if(this.selectKittyMonths.id>3 && this.selectKittyMonths.id<6)
-                        return ('1,5 пачки влажного корма + ' + (20 + 5 * this.selectKittyMonths.months).toFixed(1) + 'гр сухого')
+                    if(this.selectKittyMonths.id<2) 
+                        return ('1 пачка влажного корма')
+                    else if(this.selectKittyMonths.id>2 && this.selectKittyMonths.id<6)
+                        return ('1 пачка влажного корма + ' + (15 + 4 * this.selectKittyMonths.months).toFixed(1) + 'гр сухого')
                     else
                         return ('2 пачки влажного корма + ' + (32 + this.selectKittyMonths.months).toFixed(1) + 'гр сухого')
                 }
             }
-            else if(this.selectAge.id == 1 || this.selectAge.id == 2)
+            else if(this.selectAge.id == 1)
             {
                 if(this.selectFeedType.id == 0)
                 {
                     if(this.selectFactor.id == 0)
                     {
-                        return (((65 + (37.5 - 0.5 * this.weight) * this.weight)/3.75).toFixed(1) + 'гр сухого корма')
+                        if(this.weight < 4)
+                            return (((70 + (38 - 0.5 * this.weight) * this.weight)/3.5).toFixed(1) + 'гр сухого корма')
+                        else 
+                            return (((100 + (38 - 0.5 * this.weight) * 2 * this.weight)/3.5).toFixed(1) + 'гр сухого корма')
                     }
                     else if(this.selectFactor.id == 1)
-                        return '120гр сухого корма'
+                        return '120 - 165гр сухого корма'
                     else if(this.selectFactor.id == 2)
-                        return '150гр сухого корма'
+                        return '140 - 180гр сухого корма'
                 }
                 else if(this.selectFeedType.id == 1)
                 {
                     if(this.selectFactor.id == 0)
                     {
                         if(this.weight < 3)
-                            return ('1 пачка влажного корма + ' + (((65 + (37.5 - 0.5 * this.weight) * this.weight)-56)/3.75).toFixed(1) + 'гр сухого')
+                            return ('2 пачка влажного корма + ' + ((70 + (38 - 0.5 * this.weight) * this.weight)/3.5).toFixed(1) + 'гр сухого')
                         else 
-                            return ('2 пачки влажного корма + ' + (((65 + (37.5 - 0.5 * this.weight) * this.weight)-2*56)/3.75).toFixed(1) + 'гр сухого')
+                            return ('2 пачки влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5).toFixed(1) + 'гр сухого')
                     }
                     else if(this.selectFactor.id == 1)
-                        return '2 пачки влажного корма + 90гр сухого'
+                        return '2 пачки влажного корма + 80 - 120гр сухого'
                     else if(this.selectFactor.id == 2)
-                        return '2 пачки влажного корма + 100гр сухого'
+                        return '2 пачки влажного корма + 100 - 130гр сухого'
                 }
             }
+            else if(this.selectAge.id == 2)
+                if(this.selectFeedType.id == 0)
+                {
+                    if(this.selectFactor.id == 0)
+                    {
+                        if(this.weight < 4)
+                            return (((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8.toFixed(1) + 'гр сухого корма')
+                        else 
+                            return (((100 + (38 - 0.5 * this.weight) * 2 * this.weight)/3.5)*0.8.toFixed(1) + 'гр сухого корма')
+                    }
+                    else if(this.selectFactor.id == 1)
+                        return '100 - 130гр сухого корма'
+                    else if(this.selectFactor.id == 2)
+                        return '115 - 150гр сухого корма'
+                }
+                else if(this.selectFeedType.id == 1)
+                {
+                    if(this.selectFactor.id == 0)
+                    {
+                        if(this.weight < 3)
+                            return ('2 пачка влажного корма + ' + ((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8.toFixed(1) + 'гр сухого')
+                        else 
+                            return ('2 пачки влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5)*0.8.toFixed(1) + 'гр сухого')
+                    }
+                    else if(this.selectFactor.id == 1)
+                        return '2 пачки влажного корма + 60 - 100гр сухого'
+                    else if(this.selectFactor.id == 2)
+                        return '2 пачки влажного корма + 80 - 120гр сухого'
+                }
         }
     }
 })
