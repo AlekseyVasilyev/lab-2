@@ -25,8 +25,7 @@ var main = new Vue({
     data:{
         headlines:[
             'О корме:','Преимущества:','Особенности нашего корма:'
-        ],
-        bootsClass:{ aboutFeed:'col-lg-3 col-md-11 description mx-auto' }
+        ]
     }
 })
 

@@ -31,3 +31,6 @@ nav{
 .active a{
     color:#fff7fa;
 }
+.footer p{
+    font-size:1.2vw;
+}

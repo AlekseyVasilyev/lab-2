@@ -1,5 +1,4 @@
 @import url(style.css);
-@import url(fonts.css);
 
 nav{
     height: 50px;
@@ -12,6 +11,7 @@ nav{
     border:none;
     width:80%;
     border-bottom:1px solid #c4b0b7;
+    font-size: 23px;
 }
 .navbar-brand h1{
     font-weight: 600;
@@ -28,4 +28,7 @@ nav{
 }
 .logo{
     height:46px;
+}
+.footer p{
+    font-size:2vw;
 }

@@ -75,7 +75,7 @@
                         <input name="weight" placeholder="Введите вес" class="form-control" v-model="weight">
                     </div>
 
-                    <div><span><h3>Рекомендованное количество корма: {{ total }}</h3></span></div>
+                    <div class="total"><span><h3>Рекомендованное количество корма: {{ total }}</h3></span></div>
 
                     <div>
                         <button class="btn btn-danger reset_btn" v-on:click="(resetButton = true) && (selectAge = '') && (weight = null)" type="reset">Очистить</button>
@@ -85,91 +85,91 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-8 col-md-9 col-sm-10 mx-auto" id="product" v-if="total!=null">
+                    <div class="col-lg-8 col-md-9 col-sm-10 col-10 mx-auto" id="product" v-if="total!=null">
                         <p>Рекомендованный корм:</p>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 1) && (selectFeedType.id == 1)">
-                        <img class="feed_img" :src="feed[0].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 1) && (selectFeedType.id == 1)">
                         <div>
+                            <img class="feed_img" :src="feed[0].img">
                             <h3>{{ feed[0].header }}</h3>
                             <p>{{ feed[0].description }}</p>
                             <p><span>Состав:</span></p>
                             <p>{{ feed[0].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 2)">
-                        <img class="feed_img" :src="feed[1].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 2)">
                         <div>
+                            <img class="feed_img" :src="feed[1].img">
                             <h3>{{ feed[1].header }}</h3>
                             <p>{{ feed[1].description }}</p>
                             <p><span>Состав:</span></p>
                             <p>{{ feed[1].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 2) && (selectFeedType.id == 1)">
-                        <img class="feed_img" :src="feed[2].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 2) && (selectFeedType.id == 1)">
                         <div>
+                            <img class="feed_img" :src="feed[2].img">
                             <h3>{{ feed[2].header }}</h3>
                             <p>{{ feed[2].description }}</p>
                             <p><span>Состав:</span></p>
                             <p>{{ feed[2].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 1)">
-                        <img class="feed_img" :src="feed[3].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 1)">
                         <div>
+                            <img class="feed_img" :src="feed[3].img">
                             <h3>{{ feed[3].header }}</h3>
                             <p>{{ feed[3].description }}</p>
                             <p><span>Состав:</span></p>
                             <p>{{ feed[3].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
-                        <img class="feed_img" :src="feed[4].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
                         <div>
+                            <img class="feed_img" :src="feed[4].img">
                             <h3>{{ feed[4].header }}</h3>
                             <p>{{ feed[4].description }}</p>
                             <p><span>Состав:</span></p>
                             <p>{{ feed[4].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 0)">
-                        <img class="feed_img" :src="feed[5].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 0)">
                         <div>
+                            <img class="feed_img" :src="feed[5].img">
                             <h3>{{ feed[5].header }}</h3>
                             <p>{{ feed[5].description }}</p>
                             <p><span>Состав:</span></p>
                             <p>{{ feed[5].composition }}</p>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-9 col-sm-10 mx-auto" id="delicacy" v-if="total!=null">
+                    <div class="col-lg-8 col-md-9 col-sm-10 col-10 mx-auto" id="product" v-if="total!=null">
                         <p>Также покупайте наши лакомства:</p>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="total!=null">
-                        <img class="feed_img" :src="honey[0].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="total!=null">
                         <div>
-                            <h3>{{ honey[0].header }}</h3>
-                            <p>{{ honey[0].description }}</p>
+                            <img class="feed_img" :src="feed[6].img">
+                            <h3>{{ feed[6].header }}</h3>
+                            <p>{{ feed[6].description }}</p>
                             <p><span>Состав:</span></p>
-                            <p>{{ honey[0].composition }}</p>
+                            <p>{{ feed[6].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="total!=null">
-                        <img class="feed_img" :src="honey[1].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="total!=null">
                         <div>
-                            <h3>{{ honey[1].header }}</h3>
-                            <p>{{ honey[1].description }}</p>
+                            <img class="feed_img" :src="feed[7].img">
+                            <h3>{{ feed[7].header }}</h3>
+                            <p>{{ feed[7].description }}</p>
                             <p><span>Состав:</span></p>
-                            <p>{{ honey[1].composition }}</p>
+                            <p>{{ feed[7].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="total!=null">
-                        <img class="feed_img" :src="honey[2].img">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="total!=null">
                         <div>
-                            <h3>{{ honey[2].header }}</h3>
-                            <p>{{ honey[2].description }}</p>
+                            <img class="feed_img" :src="feed[8].img">
+                            <h3>{{ feed[8].header }}</h3>
+                            <p>{{ feed[8].description }}</p>
                             <p><span>Состав:</span></p>
-                            <p>{{ honey[2].composition }}</p>
+                            <p>{{ feed[8].composition }}</p>
                         </div>
                     </div>
                 </div>

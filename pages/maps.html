@@ -34,8 +34,8 @@
 
         <div class="container map" id="map">
             <div class="row">
-                <label ></label>
-                <select v-model="selectedCity" class="form-control">
+                <label for="selectCity"><h4>Выберите город:</h4></label>
+                <select v-model="selectedCity" class="form-control" name="selectCity">
                     <option v-for="city in maps" :key="city.id" :value="city">{{ city.name }}</option>
                 </select>
                 <iframe :src="selectedCity.url" width="800" height="700" class="col-12"></iframe>

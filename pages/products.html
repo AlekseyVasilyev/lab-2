@@ -34,16 +34,11 @@
 
         <div class="container-fluid" id="main">
             <div class="row">
-                <div class="col-lg-8 col-md-9 col-sm-10 mx-auto" id="product">
+                <div class="col-lg-8 col-md-9 col-sm-10 col-10 mx-auto" id="product">
                     <p>Наша продукция:</p>
                 </div>
-                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-for="element in feed">
-                    <img class="feed_img" :src="element.img">
+                <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-for="element in feed">
                     <products :title="element"></products>
-                </div>
-                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-for="item in honey">
-                    <img class="feed_img" :src="item.img">
-                    <products :title="item"></products>
                 </div>
             </div>
         </div>

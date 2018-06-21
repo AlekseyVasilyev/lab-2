@@ -1,21 +1,11 @@
 @import url(style-desktop.css);
 
-.feed_img{
-    height: 20vw;
-    margin: 1% 20px ;
-}
-#product p{
-    font-size: 2.6vw;
-}
 #main{
     margin-top:4vw;
 }
 .headline{
     font-size: 1.8vw;
 }
-.cat_feed p{
+.description{
     font-size: 1.1vw;
-}
-.cat_feed h3{
-    font-size:1.5vw;
 }

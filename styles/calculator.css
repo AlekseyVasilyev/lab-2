@@ -1,5 +1,5 @@
-@import url(about-desktop.css) (min-width:991px);
-@import url(about-mobile.css) (max-width:990px);
+@import url(calculator-desktop.css) (min-width:991px);
+@import url(calculator-mobile.css) (max-width:990px);
 @import url(products.css);
 
 .navbar-brand h1{

@@ -54,8 +54,8 @@ var main = new Vue({
         ],
         bootsClass:{ 
             header:'news_header col-11 mx-auto',
-            author:'author_date col-sm-12 col-lg-11 mx-auto',
-            button_p:'col-sm-12 col-lg-10 mx-auto'
+            author:'author_date col-sm-12 col-lg-11 col-12 mx-auto',
+            button_p:'col-sm-12 col-lg-10 col-12 mx-auto'
         }
     }
 })

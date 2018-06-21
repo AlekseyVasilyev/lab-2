@@ -48,7 +48,7 @@ var main = new Vue({
             { id:3, name:'Кот матроскин', src:'../assets/matroskin.jpg', position:'Главный бухгалтер.' }
         ],
         bootsClass:{ 
-            avatar:'d-flex flex-column align-items-center col-lg-3 col-md-6 col-sm-6'
+            avatar:'d-flex flex-column align-items-center col-lg-3 col-md-6 col-sm-6 col-6'
         }
     }
 })

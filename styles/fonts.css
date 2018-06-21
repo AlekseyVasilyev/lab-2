@@ -1,21 +1,7 @@
 @media (max-width:991px){
-    .description h3{
-        margin-top:10px;
-        font-size: 2.6vw;
-    }
-    #main p{
-        font-size:2vw;
-    }
-    .cat_feed h3{
-        font-size:2.3vw;
-        font-weight: 700;
-    }
-    .cat_feed p{
-        font-size: 1.6vw;
-    }
-    #product{
-        font-size: 3vw;
-    }
+    
+    
+    
     form p{
         font-size:2.2vw;
     }
@@ -30,24 +16,16 @@
     .navbar-nav li{
         font-size: 20px;
     }
-    .description p{
-        font-size: 1.8vw;
-    }
+    
     .news_header{
         font-size: 3vw;
     }
 }
 @media (max-width:767px){
-    .author_date p, .footer, .btn_pink{
-        font-size: 2vw;
-    }
+    
     .navbar-nav li{
         font-size: 25px;
     }
-    .description p{
-        font-size: 2.1vw;
-    }
-    .news_header{
-        font-size: 3.5vw;
-    }
+    
+    
 }

@@ -23,3 +23,9 @@
 #product p{
     color: #f0dae2;
 }
+.description{
+    font-size: 2.2vw;
+}
+.description h3{
+    font-size:3.5vw;
+}
