@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Калькулятор кормов</title>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta name="author" content="Васильев Алексей">
+        <meta name="description" content="О компании">
+        <meta name="keywords" content="О компании, вискас, контакты">
+        <link rel="stylesheet" href="../styles/calculator.css">
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <link rel="shortcut icon" href="../assets/logo.png" type="text/x-icon">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav id="nav" :class="navClass.mainNav"> 
+            <div>
+                <img class="logo" src="../assets/logo.png">
+                <a class="navbar-brand p-0" href="../index.html" style="color: #fdebf2"><h1>Whiskas</h1></a>
+            </div>
+            <button type="button" class="navbar-toggler hidden-lg-up" data-toggle="collapse" data-target="#dropDownMenu" aria-expanded="false">
+                &#9776;
+            </button>
+            <div :class="navClass.menu" id="dropDownMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-auto" v-for="item in url"> 
+                        <li-item v-bind:href="item.href" v-bind:todo="item"></li-item>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container" id="food-calculator">
+            <form class="d-flex flex-column">
+                <div>
+                    <label for="age">Возраст кота/кошки:</label>
+                    <select class="form-control" v-model="selectAge" v-on:click="resetButton = false" name="age">
+                        <option v-for="age in ages" v-bind:value="age">{{ age.name }}</option>
+                    </select>
+                </div>
+
+                <div v-if="(selectAge.id != null) && (resetButton == false)">
+                    <label for="food">Вид корма:</label>
+                    <select class="form-control" v-model="selectFeedType" name="food">
+                        <option v-for="type in feed" v-bind:value="type">{{ type.name }}</option>
+                    </select>
+                </div>
+
+                <div v-if="(selectAge.id == 0) && (selectFeedType.id == 0)">
+                    <label for="kitty-dry-food">Сколько месяцев котёнку:</label>
+                    <select class="form-control" v-model="selectKittyDryFood" name="kitty-dry-food">
+                        <option v-for="dryFoodAge in dryFood" v-bind:value="dryFoodAge">{{ dryFoodAge.name }}</option>
+                    </select>
+                </div>
+
+                <div v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
+                    <label for="kitty-wet-food">Сколько месяцев котёнку:</label>
+                    <select class="form-control" v-model="selectKittyWetFood" name="kitty-wet-food">
+                        <option v-for="wetFoodAge in wetFood" v-bind:value="wetFoodAge">{{ wetFoodAge.name }}</option>
+                    </select>
+                </div>
+
+                <div v-if="(selectAge.id == 1) || (selectAge.id == 2)">
+                    <label for="factors">Факторы:</label>
+                    <select class="form-control" v-model="selectFactor" name="factors">
+                        <option v-for="factor in factors" v-bind:value="factor">{{ factor.name }}</option>
+                    </select>
+                </div>
+
+                <div v-if="selectFactor.id == 0">
+                    <label for="weight">Введите вес кота/кошки</label>
+                    <input name="weight" placeholder="Введите вес" class="form-control" v-model="weight">
+                </div>
+
+
+                <div>
+                    <!-- <span v-if="(selectAge.id == 0) && (selectFeedType.id == 0)"><h3>Рекомендованное количество корма: {{ selectKittyDryFood.dryFoodFirst }}</h3></span>
+                    <span v-if="(selectAge.id == 0) && (selectFeedType.id == 1)"><h3>Рекомендованное количество корма: {{ selectKittyWetFood.wetFoodFirst }}</h3></span>
+                    <span v-if="(selectAge.id != 0) && (selectFeedType.id == 0) && (selectFactor.id == 1)"><h3>Рекомендованное количество корма: {{ pregnantDry }}</h3></span>
+                    <span v-if="(selectAge.id != 0) && (selectFeedType.id == 1) && (selectFactor.id == 1)"><h3>Рекомендованное количество корма: {{ pregnantWet }}</h3></span>
+                    <span v-if="(selectAge.id != 0) && (selectFeedType.id == 0) && (selectFactor.id == 2)"><h3>Рекомендованное количество корма: {{ nursingDry }}</h3></span>
+                    <span v-if="(selectAge.id != 0) && (selectFeedType.id == 1) && (selectFactor.id == 2)"><h3>Рекомендованное количество корма: {{ nursingWet }}</h3></span> -->
+                </div>
+
+                <div>
+                    <button class="btn btn-danger" v-on:click="(resetButton = true) && (selectAge = '') && (weight = '')" type="reset">Очистить</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- <div id="app">
+            <select v-model="selectedUser">
+                <option v-for="user in users" v-bind:value="user">{{user.name}}</option>
+            </select>
+            <span>Выбрано: {{selectedUser.name}} - {{selectedUser.age}}</span>
+        </div> -->
+
+
+
+        <div class="row footer m-0">
+            <div :class="footerStyle.footer">
+                <p v-for="link in inf[0]">{{ link }}</p>
+            </div>
+            <div :class="footerStyle.footer">
+                <p v-for="link in inf[1]">{{ link }}</p>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="../scripts/main.js"></script>
+        
+    </body>
+</html>

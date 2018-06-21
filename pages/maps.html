@@ -32,14 +32,12 @@
             </div>
         </nav>
 
-        <div class="container map">
+        <div class="container map" id="map">
             <div class="row">
-                <select v-model="select" class="form-control">
-                    <option value="https://www.google.com/maps/d/embed?mid=1oBX4Tf6xE51G291PCh2LuuDj8Z8c6yKW">Ижевск</option>
-                    <option value="https://www.google.com/maps/d/embed?mid=1qkAdKcLJwdklf0bMKMQ4OdcTkReKC822">Москва</option>
-                    <option value="https://www.google.com/maps/d/embed?mid=1t-bLLfS8iXf5dujcO0ZH8WjdFv3DUKDx">Санкт петербург</option>
+                <select v-model="selectedCity" class="form-control">
+                    <option v-for="city in maps" v-bind:value="city">{{ city.name }}</option>
                 </select>
-                <iframe src="https://www.google.com/maps/d/embed?mid=1oBX4Tf6xE51G291PCh2LuuDj8Z8c6yKW" width="800" height="700" class="col-12"></iframe>
+                <iframe :src="selectedCity.url" width="800" height="700" class="col-12"></iframe>
             </div>
         </div>
 
@@ -57,7 +55,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="../scripts/maps.js"></script>
         <script src="../scripts/main.js"></script>
         
     </body>
