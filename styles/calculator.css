@@ -1,5 +1,6 @@
 @import url(about-desktop.css) (min-width:991px);
 @import url(about-mobile.css) (max-width:990px);
+@import url(products.css);
 
 .navbar-brand h1{
     font-weight: 600;
@@ -32,4 +33,20 @@
 }
 #food-calculator{
     margin-top:70px;
+}
+.cat_feed{
+    margin-bottom:15px;
+}
+#delicacy{
+    text-align: center;
+    background-color: #931773;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    color:#f0dae2;
+    letter-spacing: 3px;
+    font-size: 2vw;
+}
+.reset_btn{
+    margin-bottom:20px;
 }

@@ -37,50 +37,13 @@
                 <div class="col-lg-8 col-md-9 col-sm-10 mx-auto" id="product">
                     <p>Наша продукция:</p>
                 </div>
-                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
-                    <img class="feed_img" :src="feed[0].img">
-                    <div>
-                        <h3>{{ feed[0].header }}</h3>
-                        <p>{{ feed[0].description }}</p>
-                        <p><span>Состав:</span></p>
-                        <p>{{ feed[0].composition }}</p>
-                    </div>
+                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-for="element in feed">
+                    <img class="feed_img" :src="element.img">
+                    <products :title="element"></products>
                 </div>
-                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
-                    <img class="feed_img" :src="feed[1].img">
-                    <div>
-                        <h3>{{ feed[1].header }}</h3>
-                        <p>{{ feed[1].description }}</p>
-                        <p><span>Состав:</span></p>
-                        <p>{{ feed[1].composition }}</p>
-                    </div>
-                </div>
-                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
-                    <img class="feed_img" :src="feed[2].img">
-                    <div>
-                        <h3>{{ feed[2].header }}</h3>
-                        <p>{{ feed[2].description }}</p>
-                        <p><span>Состав:</span></p>
-                        <p>{{ feed[2].composition }}</p>
-                    </div>
-                </div>
-                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
-                    <img class="feed_img" :src="feed[3].img">
-                    <div>
-                        <h3>{{ feed[3].header }}</h3>
-                        <p>{{ feed[3].description }}</p>
-                        <p><span>Состав:</span></p>
-                        <p>{{ feed[3].composition }}</p>
-                    </div>
-                </div>
-                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto">
-                    <img class="feed_img" :src="feed[4].img">
-                    <div>
-                        <h3>{{ feed[4].header }}</h3>
-                        <p>{{ feed[4].description }}</p>
-                        <p><span>Состав:</span></p>
-                        <p>{{ feed[4].composition }}</p>
-                    </div>
+                <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-for="item in honey">
+                    <img class="feed_img" :src="item.img">
+                    <products :title="item"></products>
                 </div>
             </div>
         </div>
@@ -99,6 +62,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="../scripts/main.js"></script>
+        <script src="../scripts/products.js"></script>
     </body>
 </html>

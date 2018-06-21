@@ -25,79 +25,156 @@
             </button>
             <div :class="navClass.menu" id="dropDownMenu">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-auto" v-for="item in url"> 
-                        <li-item v-bind:href="item.href" v-bind:todo="item"></li-item>
+                    <li class="nav-item mx-auto" v-for="item in url" :key="item.id"> 
+                        <li-item :href="item.href" :todo="item"></li-item>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div class="container" id="food-calculator">
-            <form class="d-flex flex-column">
-                <div>
-                    <label for="age">Возраст кота/кошки:</label>
-                    <select class="form-control" v-model="selectAge" v-on:click="resetButton = false" name="age">
-                        <option v-for="age in ages" v-bind:value="age">{{ age.name }}</option>
-                    </select>
-                </div>
+        <div id="main">
+            <div class="container calculator">
+                <form class="d-flex flex-column">
+                    <div>
+                        <label for="age">Возраст кота/кошки:</label>
+                        <select class="form-control" v-model="selectAge" v-on:click="resetButton = false" name="age">
+                            <option v-for="age in ages" :key="age.id" :value="age">{{ age.name }}</option>
+                        </select>
+                    </div>
 
-                <div v-if="(selectAge.id != null) && (resetButton == false)">
-                    <label for="food">Вид корма:</label>
-                    <select class="form-control" v-model="selectFeedType" name="food">
-                        <option v-for="type in feed" v-bind:value="type">{{ type.name }}</option>
-                    </select>
-                </div>
+                    <div v-if="(selectAge.id != null) && (resetButton == false)">
+                        <label for="food">Вид корма:</label>
+                        <select class="form-control" v-model="selectFeedType" name="food">
+                            <option v-for="type in feedType" :key="type.id" :value="type">{{ type.name }}</option>
+                        </select>
+                    </div>
 
-                <div v-if="(selectAge.id == 0) && (selectFeedType.id == 0)">
-                    <label for="kitty-dry-food">Сколько месяцев котёнку:</label>
-                    <select class="form-control" v-model="selectKittyDryFood" name="kitty-dry-food">
-                        <option v-for="dryFoodAge in dryFood" v-bind:value="dryFoodAge">{{ dryFoodAge.name }}</option>
-                    </select>
-                </div>
+                    <div v-if="(selectAge.id == 0) && (selectFeedType.id == 0)">
+                        <label for="kitty-dry-food">Сколько месяцев котёнку:</label>
+                        <select class="form-control" v-model="selectKittyMonths" name="kitty-dry-food">
+                            <option v-for="dryFoodAge in kittyMonths" :key="dryFoodAge.id" :value="dryFoodAge">{{ dryFoodAge.name }}</option>
+                        </select>
+                    </div>
 
-                <div v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
-                    <label for="kitty-wet-food">Сколько месяцев котёнку:</label>
-                    <select class="form-control" v-model="selectKittyWetFood" name="kitty-wet-food">
-                        <option v-for="wetFoodAge in wetFood" v-bind:value="wetFoodAge">{{ wetFoodAge.name }}</option>
-                    </select>
-                </div>
+                    <div v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
+                        <label for="kitty-wet-food">Сколько месяцев котёнку:</label>
+                        <select class="form-control" v-model="selectKittyMonths" name="kitty-wet-food">
+                            <option v-for="wetFoodAge in kittyMonths" :key="wetFoodAge.id" :value="wetFoodAge">{{ wetFoodAge.name }}</option>
+                        </select>
+                    </div>
 
-                <div v-if="(selectAge.id == 1) || (selectAge.id == 2)">
-                    <label for="factors">Факторы:</label>
-                    <select class="form-control" v-model="selectFactor" name="factors">
-                        <option v-for="factor in factors" v-bind:value="factor">{{ factor.name }}</option>
-                    </select>
-                </div>
+                    <div v-if="(selectAge.id == 1) || (selectAge.id == 2)">
+                        <label for="factors">Факторы:</label>
+                        <select class="form-control" v-model="selectFactor" name="factors">
+                            <option v-for="factor in factors" :key="factor.id" :value="factor">{{ factor.name }}</option>
+                        </select>
+                    </div>
 
-                <div v-if="selectFactor.id == 0">
-                    <label for="weight">Введите вес кота/кошки</label>
-                    <input name="weight" placeholder="Введите вес" class="form-control" v-model="weight">
-                </div>
+                    <div v-if="(selectFactor.id == 0) && (selectAge.id != null) && (selectAge.id != 0) && (resetButton == false)">
+                        <label for="weight">Введите вес кота/кошки (кг)</label>
+                        <input name="weight" placeholder="Введите вес" class="form-control" v-model="weight">
+                    </div>
 
+                    <div><span><h3>Рекомендованное количество корма: {{ total }}</h3></span></div>
 
-                <div>
-                    <!-- <span v-if="(selectAge.id == 0) && (selectFeedType.id == 0)"><h3>Рекомендованное количество корма: {{ selectKittyDryFood.dryFoodFirst }}</h3></span>
-                    <span v-if="(selectAge.id == 0) && (selectFeedType.id == 1)"><h3>Рекомендованное количество корма: {{ selectKittyWetFood.wetFoodFirst }}</h3></span>
-                    <span v-if="(selectAge.id != 0) && (selectFeedType.id == 0) && (selectFactor.id == 1)"><h3>Рекомендованное количество корма: {{ pregnantDry }}</h3></span>
-                    <span v-if="(selectAge.id != 0) && (selectFeedType.id == 1) && (selectFactor.id == 1)"><h3>Рекомендованное количество корма: {{ pregnantWet }}</h3></span>
-                    <span v-if="(selectAge.id != 0) && (selectFeedType.id == 0) && (selectFactor.id == 2)"><h3>Рекомендованное количество корма: {{ nursingDry }}</h3></span>
-                    <span v-if="(selectAge.id != 0) && (selectFeedType.id == 1) && (selectFactor.id == 2)"><h3>Рекомендованное количество корма: {{ nursingWet }}</h3></span> -->
-                </div>
+                    <div>
+                        <button class="btn btn-danger reset_btn" v-on:click="(resetButton = true) && (selectAge = '') && (weight = null)" type="reset">Очистить</button>
+                    </div>
+                </form>
+            </div>
 
-                <div>
-                    <button class="btn btn-danger" v-on:click="(resetButton = true) && (selectAge = '') && (weight = '')" type="reset">Очистить</button>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 col-md-9 col-sm-10 mx-auto" id="product" v-if="total!=null">
+                        <p>Рекомендованный корм:</p>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 1) && (selectFeedType.id == 1)">
+                        <img class="feed_img" :src="feed[0].img">
+                        <div>
+                            <h3>{{ feed[0].header }}</h3>
+                            <p>{{ feed[0].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ feed[0].composition }}</p>
+                        </div>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 2)">
+                        <img class="feed_img" :src="feed[1].img">
+                        <div>
+                            <h3>{{ feed[1].header }}</h3>
+                            <p>{{ feed[1].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ feed[1].composition }}</p>
+                        </div>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 2) && (selectFeedType.id == 1)">
+                        <img class="feed_img" :src="feed[2].img">
+                        <div>
+                            <h3>{{ feed[2].header }}</h3>
+                            <p>{{ feed[2].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ feed[2].composition }}</p>
+                        </div>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 1)">
+                        <img class="feed_img" :src="feed[3].img">
+                        <div>
+                            <h3>{{ feed[3].header }}</h3>
+                            <p>{{ feed[3].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ feed[3].composition }}</p>
+                        </div>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
+                        <img class="feed_img" :src="feed[4].img">
+                        <div>
+                            <h3>{{ feed[4].header }}</h3>
+                            <p>{{ feed[4].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ feed[4].composition }}</p>
+                        </div>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="(selectAge.id == 0)">
+                        <img class="feed_img" :src="feed[5].img">
+                        <div>
+                            <h3>{{ feed[5].header }}</h3>
+                            <p>{{ feed[5].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ feed[5].composition }}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-9 col-sm-10 mx-auto" id="delicacy" v-if="total!=null">
+                        <p>Также покупайте наши лакомства:</p>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="total!=null">
+                        <img class="feed_img" :src="honey[0].img">
+                        <div>
+                            <h3>{{ honey[0].header }}</h3>
+                            <p>{{ honey[0].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ honey[0].composition }}</p>
+                        </div>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="total!=null">
+                        <img class="feed_img" :src="honey[1].img">
+                        <div>
+                            <h3>{{ honey[1].header }}</h3>
+                            <p>{{ honey[1].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ honey[1].composition }}</p>
+                        </div>
+                    </div>
+                    <div class="cat_feed col-lg-9 col-md-10 col-sm-11 mx-auto" v-if="total!=null">
+                        <img class="feed_img" :src="honey[2].img">
+                        <div>
+                            <h3>{{ honey[2].header }}</h3>
+                            <p>{{ honey[2].description }}</p>
+                            <p><span>Состав:</span></p>
+                            <p>{{ honey[2].composition }}</p>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
-
-        <!-- <div id="app">
-            <select v-model="selectedUser">
-                <option v-for="user in users" v-bind:value="user">{{user.name}}</option>
-            </select>
-            <span>Выбрано: {{selectedUser.name}} - {{selectedUser.age}}</span>
-        </div> -->
-
-
 
         <div class="row footer m-0">
             <div :class="footerStyle.footer">
@@ -113,7 +190,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="../scripts/main.js"></script>
+        <script src="../scripts/calculator.js"></script>
         
     </body>
 </html>
