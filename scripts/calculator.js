@@ -181,7 +181,7 @@ var main = new Vue({
                         if(this.weight < 3)
                             return ('2 пачка влажного корма + ' + ((70 + (38 - 0.5 * this.weight) * this.weight)/3.5).toFixed(1) + 'гр сухого')
                         else 
-                            return ('2 пачки влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5).toFixed(1) + 'гр сухого')
+                            return ('3 пачки влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5).toFixed(1) + 'гр сухого')
                     }
                     else if(this.selectFactor.id == 1)
                         return '2 пачки влажного корма + 80 - 120гр сухого'
@@ -195,9 +195,9 @@ var main = new Vue({
                     if(this.selectFactor.id == 0)
                     {
                         if(this.weight < 4)
-                            return (((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8.toFixed(1) + 'гр сухого корма')
+                            return ((((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого корма')
                         else 
-                            return (((100 + (38 - 0.5 * this.weight) * 2 * this.weight)/3.5)*0.8.toFixed(1) + 'гр сухого корма')
+                            return ((((100 + (38 - 0.5 * this.weight) * 2 * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого корма')
                     }
                     else if(this.selectFactor.id == 1)
                         return '100 - 130гр сухого корма'
@@ -209,9 +209,9 @@ var main = new Vue({
                     if(this.selectFactor.id == 0)
                     {
                         if(this.weight < 3)
-                            return ('2 пачка влажного корма + ' + ((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8.toFixed(1) + 'гр сухого')
+                            return ('2 пачка влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого')
                         else 
-                            return ('2 пачки влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5)*0.8.toFixed(1) + 'гр сухого')
+                            return ('2 пачки влажного корма + ' + ((((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5)*0.8).toFixed(1) + 'гр сухого')
                     }
                     else if(this.selectFactor.id == 1)
                         return '2 пачки влажного корма + 60 - 100гр сухого'

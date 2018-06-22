@@ -63,7 +63,7 @@
                         </select>
                     </div>
 
-                    <div v-if="(selectAge.id == 1) || (selectAge.id == 2)">
+                    <div v-if="(selectAge.id == 1) || (selectAge.id == 2) && (selectAge.id != 0)">
                         <label for="factors">Факторы:</label>
                         <select class="form-control" v-model="selectFactor" name="factors">
                             <option v-for="factor in factors" :key="factor.id" :value="factor">{{ factor.name }}</option>
