@@ -49,14 +49,14 @@
                         </select>
                     </div>
 
-                    <div v-if="(selectAge.id == 0) && (selectFeedType.id == 0)">
+                    <div v-if="(selectAge.id == 0) && (selectAge.id != 1 || selectAge.id != 2) && (selectFeedType.id == 0)">
                         <label for="kitty-dry-food">Сколько месяцев котёнку:</label>
                         <select class="form-control" v-model="selectKittyMonths" name="kitty-dry-food">
                             <option v-for="dryFoodAge in kittyMonths" :key="dryFoodAge.id" :value="dryFoodAge">{{ dryFoodAge.name }}</option>
                         </select>
                     </div>
 
-                    <div v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
+                    <div v-if="(selectAge.id == 0) && (selectAge.id != 1 || selectAge.id != 2) && (selectFeedType.id == 1)">
                         <label for="kitty-wet-food">Сколько месяцев котёнку:</label>
                         <select class="form-control" v-model="selectKittyMonths" name="kitty-wet-food">
                             <option v-for="wetFoodAge in kittyMonths" :key="wetFoodAge.id" :value="wetFoodAge">{{ wetFoodAge.name }}</option>
@@ -70,7 +70,7 @@
                         </select>
                     </div>
 
-                    <div v-if="(selectFactor.id == 0) && (selectAge.id != null) && (selectAge.id != 0) && (resetButton == false)">
+                    <div v-if="(selectFactor.id == 0) && (selectAge.id == 1) || (selectAge.id == 2)  && (selectAge.id != 0) && (resetButton == false)">
                         <label for="weight">Введите вес кота/кошки (кг)</label>
                         <input name="weight" placeholder="Введите вес" class="form-control" v-model="weight">
                     </div>
@@ -78,7 +78,7 @@
                     <div class="total"><span><h3>Рекомендованное количество корма: {{ total }}</h3></span></div>
 
                     <div>
-                        <button class="btn btn-danger reset_btn" v-on:click="(resetButton = true) && (selectAge = '') && (weight = null)" type="reset">Очистить</button>
+                        <button class="btn btn-danger reset_btn" v-on:click="(resetButton = true),(selectAge = ''),(weight = null),(selectFeedType = ''),(selectFactor = '')" type="reset">Очистить</button>
                     </div>
                 </form>
             </div>

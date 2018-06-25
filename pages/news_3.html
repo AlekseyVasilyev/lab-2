@@ -113,17 +113,18 @@
                         <p><b>Оставьте комментарий</b></p>
                         <div>
                             <label for="name">Имя:
-                                <input name="name" class="form-control" type="text" placeholder="Введите имя" tabindex="1" required>
+                                <input id="name" v-model="name" name="name" class="form-control" type="text" placeholder="Введите имя" tabindex="1" required>
                             </label>
                         </div>
                         <div>
                             <label for="comment">Текст комментария:
-                                <textarea name="comment" class="form-control" cols="50" rows="3" wrap="hard" tabindex="2" required></textarea>
+                                <textarea id="comment" v-model="comment" name="comment" class="form-control" cols="50" rows="3" wrap="hard" tabindex="2" required></textarea>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-outline-success">Отправить</button>
+                        <button type="submit" class="btn btn-outline-success" v-on:click.prevent="addNewComment">Отправить</button>
                         <button type="reset" class="btn btn-outline-success">Очистить</button>
                     </form>
+                    <comment v-for="text in comments" :key="text.id" :word="text"></comment>
                 </div>
             </div>
         </div>

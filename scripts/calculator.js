@@ -113,7 +113,7 @@ var main = new Vue({
         selectFeedType:'',
 
         kittyMonths:[
-            { id:0, name:'1 месяц', months:1 },
+            { id:0, name:'1 месяц', months:1 , selected:'selected'},
             { id:1, name:'2 месяца', months:2 },
             { id:2, name:'3 месяца', months:3 },
             { id:3, name:'4 месяца', months:4 },
@@ -164,10 +164,19 @@ var main = new Vue({
                 {
                     if(this.selectFactor.id == 0)
                     {
-                        if(this.weight < 4)
-                            return (((70 + (38 - 0.5 * this.weight) * this.weight)/3.5).toFixed(1) + 'гр сухого корма')
+                        if(this.weight >= 30)
+                        {
+                            this.weight = 30
+                            return (((65 + (38 - 0.5 * this.weight) * 2 * this.weight)/3.5).toFixed(1) + 'гр сухого корма')
+                        }
+                        else if(this.weight <= 0 || this.weight == '-')
+                        {
+                            this.weight = ''
+                        }
+                        else if(this.weight < 4)
+                            return (((65 + (38 - 0.5 * this.weight) * this.weight)/3.5).toFixed(1) + 'гр сухого корма')
                         else 
-                            return (((100 + (38 - 0.5 * this.weight) * 2 * this.weight)/3.5).toFixed(1) + 'гр сухого корма')
+                            return (((65 + (38 - 0.5 * this.weight) * 1.5 * this.weight)/3.5).toFixed(1) + 'гр сухого корма')
                     }
                     else if(this.selectFactor.id == 1)
                         return '120 - 165гр сухого корма'
@@ -178,8 +187,17 @@ var main = new Vue({
                 {
                     if(this.selectFactor.id == 0)
                     {
-                        if(this.weight < 3)
-                            return ('2 пачка влажного корма + ' + ((70 + (38 - 0.5 * this.weight) * this.weight)/3.5).toFixed(1) + 'гр сухого')
+                        if(this.weight >= 30)
+                        {
+                            this.weight = 30
+                            return ('3 пачки влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5).toFixed(1) + 'гр сухого')
+                        }
+                        else if(this.weight <= 0 || this.weight == '-')
+                        {
+                            this.weight = ''
+                        }
+                        else if(this.weight < 3)
+                            return ('2 пачки влажного корма + ' + ((70 + (38 - 0.5 * this.weight) * this.weight)/3.5).toFixed(1) + 'гр сухого')
                         else 
                             return ('3 пачки влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5).toFixed(1) + 'гр сухого')
                     }
@@ -194,10 +212,19 @@ var main = new Vue({
                 {
                     if(this.selectFactor.id == 0)
                     {
-                        if(this.weight < 4)
-                            return ((((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого корма')
+                        if(this.weight >= 30)
+                        {
+                            this.weight = 30
+                            return ((((65 + (38 - 0.5 * this.weight) * 1.5 * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого корма')
+                        }
+                        else if(this.weight <= 0 || this.weight == '-')
+                        {
+                            this.weight = ''
+                        }
+                        else if(this.weight < 4)
+                            return ((((65 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого корма')
                         else 
-                            return ((((100 + (38 - 0.5 * this.weight) * 2 * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого корма')
+                            return ((((65 + (38 - 0.5 * this.weight) * 1.5 * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого корма')
                     }
                     else if(this.selectFactor.id == 1)
                         return '100 - 130гр сухого корма'
@@ -208,8 +235,17 @@ var main = new Vue({
                 {
                     if(this.selectFactor.id == 0)
                     {
-                        if(this.weight < 3)
-                            return ('2 пачка влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого')
+                        if(this.weight >= 30)
+                        {
+                            this.weight = 30
+                            return ('2 пачки влажного корма + ' + ((((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5)*0.8).toFixed(1) + 'гр сухого')
+                        }
+                        else if(this.weight <= 0 || this.weight == '-')
+                        {
+                            this.weight = ''
+                        } 
+                        else if(this.weight < 3)
+                            return ('2 пачки влажного корма + ' + (((70 + (38 - 0.5 * this.weight) * this.weight)/3.5)*0.8).toFixed(1) + 'гр сухого')
                         else 
                             return ('2 пачки влажного корма + ' + ((((70 + (38 - 0.5 * this.weight) * this.weight)-2*30)/3.5)*0.8).toFixed(1) + 'гр сухого')
                     }
