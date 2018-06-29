@@ -7,7 +7,10 @@
         <meta name="author" content="Васильев Алексей">
         <meta name="description" content="Новости Вискас">
         <meta name="keywords" content="новости, интересные статьи, вискас, whiskas">
+        <script src="../scripts/jquery-3.3.1.js"></script>
+        <!-- <script src="../scripts/jq-news-script.js"></script> -->
         <link rel="stylesheet" href="../styles/news.css">
+        <link rel="stylesheet" href="../styles/animate.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         <link rel="shortcut icon" href="../assets/logo.png" type="text/x-icon">
         <meta name="viewport" content="width=device-width">
@@ -33,9 +36,9 @@
         </nav>
         
         <div id="main">
-            <div id="buttons">
-                <button class="btn btn-info choose" v-on:click="full = true, list = false">Menu</button>
-                <button class="btn btn-info choose" v-on:click="list = true, full = false">List</button>
+            <div id="toggleView" >
+                <button class="btn btn-info choose m-1" v-on:click="full = true, list = false"><p class="m-0">Full</p></button>
+                <button class="btn btn-info choose m-1" v-on:click="list = true, full = false"><p class="m-0">Small</p></button>
             </div>
             <div v-if="full == true">
                 <div class="container">
@@ -47,14 +50,12 @@
                     <h3 :class="bootsClass.header"><a v-bind:href="headers[0].href" class="header-link">{{ headers[0].title }}</a></h3>
                     <div class="description row">
                         <news-main-img v-bind:src="headers[0].src[0]"></news-main-img>
-                        <p :class="bootsClass.button_p">
+                        <a v-bind:href="headers[0].href" class="btn_pink">Читать подробнее</a>
+                        <p class="col-sm-12 col-lg-10 col-12 mx-auto">
                             Существуют разные мифы о доступных кормах, как Whiskas. Принимая их за чистую монету, многие 
                             владельцы питомцев решают отказаться от готового рациона в пользу еды со стола или более дорогого 
                             корма. Но стоит ли верить тому, что говорят? Давайте разберемся.
                         </p>
-                        <div :class="bootsClass.button_p" class="news-link">
-                            <a v-bind:href="headers[0].href" class="btn_pink">Читать подробнее</a>
-                        </div>
                     </div>
                 </div>
                 <hr>
@@ -69,15 +70,13 @@
                     </h3>
                     <div class="description row">
                         <news-main-img v-bind:src="headers[1].src[0]"></news-main-img>
-                        <p :class="bootsClass.button_p">
+                        <a v-bind:href="headers[1].href" class="btn_pink">Читать подробнее</a>
+                        <p class="col-sm-12 col-lg-10 col-12 mx-auto">
                             Кошки, как и люди, ежедневно нуждаются в получении определенного количества питательных веществ для поддержания 
                             работы своего организма. Благодаря Центру питания домашних животных WALTHAM, существующему уже более 50 лет, 
                             Whiskas создает сбалансированное и полноценное питание для питомцев разных возрастов. Мы контролируем более 
                             40 параметров, для того чтобы полностью обеспечить потребности вашего питомца в питательных веществах!
                         </p>
-                        <div :class="bootsClass.button_p" class="news-link">
-                            <a v-bind:href="headers[1].href" class="btn_pink">Читать подробнее</a>
-                        </div>
                     </div>
                 </div>
                 <hr>
@@ -92,14 +91,12 @@
                     </h3>
                     <div class="description row">
                         <news-main-img v-bind:src="headers[2].src"></news-main-img>
-                        <p :class="bootsClass.button_p">
+                        <a v-bind:href="headers[2].href" class="btn_pink">Читать подробнее</a>
+                        <p class="col-sm-12 col-lg-10 col-12 mx-auto">
                             Одомашнивание кошек связывают с началом развития земледелия более 9 тысяч лет назад. Стараясь защитить запасы 
                             зерна от грызунов, люди приманивали диких степных кошек ближе к своим поселениям. Взаимовыгодный союз превратился в долгую 
                             дружбу, которая, несмотря на смену образа жизни, не повлияла на природные инстинкты и пищевые потребности последних.
                         </p>
-                        <div :class="bootsClass.button_p" class="news-link">
-                            <a v-bind:href="headers[2].href" class="btn_pink">Читать подробнее</a>
-                        </div>
                     </div>
                 </div>
                 <hr>
@@ -107,10 +104,10 @@
 
             <div class="container" v-if="list == true">
                 <div class="description">
-                    <div class="row" v-for="news in headers">
+                    <a class="row" v-for="news in headers" :href="news.href">
                         <small-news-img :link="news"></small-news-img>
-                        <small-news-header :lonk="news"></small-news-header>
-                    </div>
+                        <small-news-header :header="news"></small-news-header>
+                    </a>
                 </div>
             </div>
         </div>

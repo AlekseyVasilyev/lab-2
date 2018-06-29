@@ -1,21 +1,32 @@
+$(document).ready(function(){
+    $(".news_img").mouseenter(function() {
+        $(".btn_pink").removeClass("fadeOut");
+        $(".btn_pink").addClass("animated");
+        $(".btn_pink").addClass("fadeIn");
+    })
+    $(".btn_pink").mouseenter(function() {
+        $(".btn_pink").removeClass("fadeOut");
+        $(".btn_pink").addClass("animated");
+        $(".btn_pink").addClass("fadeIn");
+    })
+})
+
 Vue.component('li-item', {
     props: ['todo'],
     template: '<a class="nav-link" :class="todo.active"> {{ todo.text }} </a>'
 })
 Vue.component('news-main-img', {
-    template: '<img class="news_img col-sm-12 col-lg-11 mx-auto">'
+    template: '<img class="news_img col-sm-12 col-lg-11 col-11 mx-auto test">'
 })
 Vue.component('small-news-img', {
     props:['link'],
-    template:`<a :href="link.href" class="col-lg-6 col-md-6 img-link ml-auto">
+    template:`<div class="col-lg-6 col-md-6 col-sm-6 col-5 img-link">
         <img :src="link.src[0]" class="news_img">
-    </a>`
+    </div>`
 })
 Vue.component('small-news-header', {
-    props:['lonk'],
-    template:`<h3 class="news_header col-5 mr-auto p-0" style="text-align: left">
-    <a :href="lonk.href" class="header-link">{{ lonk.title }}</a>
-    </h3>`
+    props:['header'],
+    template:'<h3 class="news_header header-link col-lg-5 col-4 mr-auto p-0" style="text-align: left">{{ header.title }}</h3>'
 })
 Vue.component('comment', {
     props:['word'],
@@ -76,7 +87,6 @@ var main = new Vue({
         bootsClass:{ 
             header:'news_header col-11 mx-auto',
             author:'author_date col-sm-12 col-lg-11 col-12 mx-auto',
-            button_p:'col-sm-12 col-lg-10 col-12 mx-auto'
         },
         name:'',
         comment:'',
@@ -95,6 +105,6 @@ var main = new Vue({
           })
           this.name = '',
           this.comment = ''
-        }
+        },
     }
 })
