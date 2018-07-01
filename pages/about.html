@@ -34,7 +34,7 @@
         <div class="main container-fluid" id="main">
             <div class="row">
                 <h3 class="headline col-12">Сотрудники компании</h3>
-                <about :class="bootsClass.avatar" v-for="creator in creators" :key="creator.id" :user="creator"></about>
+                <about class="d-flex flex-column align-items-center col-lg-3 col-md-6 col-sm-6 col-6" v-for="creator in creators" :key="creator.id" :user="creator"></about>
             </div>
             <div class="row">
                 <div class="about col-lg-5 col-md-11 col-sm-11 col-11 mx-auto">
@@ -56,9 +56,7 @@
                     <p><span>Телефон:</span> +7 951 199 18 71</p>
                     <p><span>Прочие ссылки:</span> https://vk.com/id143300347</p>
                     <h3>Адрес компании:</h3>
-                    <p>
-                        Студенческая, 7, Ижевск, Pеспублика Удмуртия, 426069
-                    </p>
+                    <p>Студенческая, 7, Ижевск, Pеспублика Удмуртия, 426069</p>
                 </div>
             </div>
         </div>

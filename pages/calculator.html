@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html">
         <meta name="author" content="Васильев Алексей">
-        <meta name="description" content="О компании">
-        <meta name="keywords" content="О компании, вискас, контакты">
+        <meta name="description" content="Калькулятор кормов">
+        <meta name="keywords" content="Калькулятор кормов, вискас, продукция вискас">
         <link rel="stylesheet" href="../styles/calculator.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         <link rel="shortcut icon" href="../assets/logo.png" type="text/x-icon">
@@ -88,7 +88,7 @@
                     <div class="col-lg-8 col-md-9 col-sm-10 col-10 mx-auto" id="product" v-if="total!=null">
                         <p>Рекомендованный корм:</p>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 1) && (selectFeedType.id == 1) && total!=null">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 1) && (selectFeedType.id == 1)">
                         <div>
                             <img class="feed_img" :src="feed[0].img">
                             <h3>{{ feed[0].header }}</h3>
@@ -97,7 +97,7 @@
                             <p>{{ feed[0].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 2) && total!=null">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 2)">
                         <div>
                             <img class="feed_img" :src="feed[1].img">
                             <h3>{{ feed[1].header }}</h3>
@@ -106,7 +106,7 @@
                             <p>{{ feed[1].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 2) && (selectFeedType.id == 1) && total!=null">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 2) && (selectFeedType.id == 1)">
                         <div>
                             <img class="feed_img" :src="feed[2].img">
                             <h3>{{ feed[2].header }}</h3>
@@ -115,7 +115,7 @@
                             <p>{{ feed[2].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 1) && total!=null">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 1)">
                         <div>
                             <img class="feed_img" :src="feed[3].img">
                             <h3>{{ feed[3].header }}</h3>
@@ -124,7 +124,7 @@
                             <p>{{ feed[3].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 0) && (selectFeedType.id == 1) && total!=null">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
                         <div>
                             <img class="feed_img" :src="feed[4].img">
                             <h3>{{ feed[4].header }}</h3>
@@ -133,7 +133,7 @@
                             <p>{{ feed[4].composition }}</p>
                         </div>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 0) && total!=null">
+                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 0)">
                         <div>
                             <img class="feed_img" :src="feed[5].img">
                             <h3>{{ feed[5].header }}</h3>

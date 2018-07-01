@@ -16,17 +16,17 @@ Vue.component('li-item', {
     template: '<a class="nav-link" :class="todo.active"> {{ todo.text }} </a>'
 })
 Vue.component('news-main-img', {
-    template: '<img class="news_img col-sm-12 col-lg-11 col-11 mx-auto test">'
+    template: '<img class="news_img col-sm-12 col-lg-11 col-12 mx-auto test">'
 })
 Vue.component('small-news-img', {
     props:['link'],
-    template:`<div class="col-lg-6 col-md-6 col-sm-6 col-5 img-link">
+    template:`<div class="col-lg-6 col-md-6 col-sm-6 col-6 img-link">
         <img :src="link.src[0]" class="news_img">
     </div>`
 })
 Vue.component('small-news-header', {
     props:['header'],
-    template:'<h3 class="news_header header-link col-lg-5 col-4 mr-auto p-0" style="text-align: left">{{ header.title }}</h3>'
+    template:'<h3 class="news_header header-link col-lg-5 col-5 mr-auto p-0" style="text-align: left">{{ header.title }}</h3>'
 })
 Vue.component('comment', {
     props:['word'],
