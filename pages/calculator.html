@@ -37,7 +37,7 @@
                 <form class="d-flex flex-column">
                     <div>
                         <label for="age">Возраст кота/кошки:</label>
-                        <select class="form-control" v-model="selectAge" v-on:click="resetButton = false" name="age">
+                        <select class="form-control" v-model="selectAge" @click="resetButton = false" name="age">
                             <option v-for="age in ages" :key="age.id" :value="age">{{ age.name }}</option>
                         </select>
                     </div>
@@ -70,7 +70,7 @@
                         </select>
                     </div>
 
-                    <div v-if="(selectFactor.id == 0) && (selectAge.id == 1) || (selectAge.id == 2)  && (selectAge.id != 0) && (resetButton == false)">
+                    <div v-if="(selectFactor.id == 0) && (selectAge.id != 0) && (resetButton == false)">
                         <label for="weight">Введите вес кота/кошки (кг)</label>
                         <input name="weight" placeholder="Введите вес" class="form-control" v-model="weight">
                     </div>
@@ -78,99 +78,45 @@
                     <div class="total"><span><h3>Рекомендованное количество корма: {{ total }}</h3></span></div>
 
                     <div>
-                        <button class="btn btn-danger reset_btn" v-on:click="(resetButton = true),(selectAge = ''),(weight = null),(selectFeedType = ''),(selectFactor = '')" type="reset">Очистить</button>
+                        <button class="btn btn-danger reset_btn" @click="(resetButton = true),(selectAge = ''),(weight = null),(selectFeedType = ''),(selectFactor = '')" type="reset">Очистить</button>
                     </div>
                 </form>
             </div>
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-8 col-md-9 col-sm-10 col-10 mx-auto" id="product" v-if="total!=null">
+                    <div :class="bootsClasses.headline" id="product" v-if="total!=null">
                         <p>Рекомендованный корм:</p>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 1) && (selectFeedType.id == 1)">
-                        <div>
-                            <img class="feed_img" :src="feed[0].img">
-                            <h3>{{ feed[0].header }}</h3>
-                            <p>{{ feed[0].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[0].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="(selectAge.id == 1) && (selectFeedType.id == 1)">
+                        <recommended :title="feed[0]"></recommended>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 2)">
-                        <div>
-                            <img class="feed_img" :src="feed[1].img">
-                            <h3>{{ feed[1].header }}</h3>
-                            <p>{{ feed[1].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[1].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="(selectAge.id == 2)">
+                        <recommended :title="feed[1]"></recommended>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 2) && (selectFeedType.id == 1)">
-                        <div>
-                            <img class="feed_img" :src="feed[2].img">
-                            <h3>{{ feed[2].header }}</h3>
-                            <p>{{ feed[2].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[2].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="(selectAge.id == 2) && (selectFeedType.id == 1)">
+                        <recommended :title="feed[2]"></recommended>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 1)">
-                        <div>
-                            <img class="feed_img" :src="feed[3].img">
-                            <h3>{{ feed[3].header }}</h3>
-                            <p>{{ feed[3].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[3].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="(selectAge.id == 1)">
+                        <recommended :title="feed[3]"></recommended>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
-                        <div>
-                            <img class="feed_img" :src="feed[4].img">
-                            <h3>{{ feed[4].header }}</h3>
-                            <p>{{ feed[4].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[4].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="(selectAge.id == 0) && (selectFeedType.id == 1)">
+                        <recommended :title="feed[4]"></recommended>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="(selectAge.id == 0)">
-                        <div>
-                            <img class="feed_img" :src="feed[5].img">
-                            <h3>{{ feed[5].header }}</h3>
-                            <p>{{ feed[5].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[5].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="(selectAge.id == 0)">
+                        <recommended :title="feed[5]"></recommended>
                     </div>
-                    <div class="col-lg-8 col-md-9 col-sm-10 col-10 mx-auto" id="product" v-if="total!=null">
+                    <div :class="bootsClasses.headline" id="product" v-if="total!=null">
                         <p>Также покупайте наши лакомства:</p>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="total!=null">
-                        <div>
-                            <img class="feed_img" :src="feed[6].img">
-                            <h3>{{ feed[6].header }}</h3>
-                            <p>{{ feed[6].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[6].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="total!=null">
+                        <recommended :title="feed[6]"></recommended>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="total!=null">
-                        <div>
-                            <img class="feed_img" :src="feed[7].img">
-                            <h3>{{ feed[7].header }}</h3>
-                            <p>{{ feed[7].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[7].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="total!=null">
+                        <recommended :title="feed[7]"></recommended>
                     </div>
-                    <div class="cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto" v-if="total!=null">
-                        <div>
-                            <img class="feed_img" :src="feed[8].img">
-                            <h3>{{ feed[8].header }}</h3>
-                            <p>{{ feed[8].description }}</p>
-                            <p><span>Состав:</span></p>
-                            <p>{{ feed[8].composition }}</p>
-                        </div>
+                    <div :class="bootsClasses.product" v-if="total!=null">
+                        <recommended :title="feed[8]"></recommended>
                     </div>
                 </div>
             </div>

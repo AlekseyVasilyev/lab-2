@@ -4,23 +4,23 @@
     margin-top:50px;
 }
 .cat_feed h3{
-    font-size:4vw;
+    font-size:3vw;
     font-weight: 700;
 }
 .cat_feed h4{
-    margin-top:5px;
-    font-size:3.2vw;
+    margin-top:-15px;
+    font-size:2.2vw;
 }
 .cat_feed p{
-    font-size: 3vw;
-    margin-bottom:10px;
+    font-size: 2vw;
+    margin-bottom:20px;
 }
 #product p{
-    font-size: 5.5vw;
+    font-size: 4vw;
     margin-bottom:7px;
 }
 .feed_img{
-    height: 40vw;
+    height: 30vw;
     margin: 1% 20px ;
     float: left;
 }

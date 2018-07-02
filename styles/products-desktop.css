@@ -8,10 +8,16 @@
     margin-bottom:7px;
 }
 .cat_feed h3{
-    font-size:1.5vw;
+    font-size:1.8vw;
+    font-weight: 600;
+}
+.cat_feed h4{
+    margin-top:5px;
+    font-size:1.3vw;
 }
 .cat_feed p{
     font-size: 1.1vw;
+    margin:0;
 }
 .feed_img{
     height: 20vw;

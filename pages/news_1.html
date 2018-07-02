@@ -7,7 +7,7 @@
         <meta name="author" content="Васильев Алексей">
         <meta name="description" content="Мифы о корме для кошек">
         <meta name="keywords" content="новости, интересные статьи, вискас, whiskas, Мифы о корме для кошек">
-        <link rel="stylesheet" href="../styles/news-main.css">
+        <link rel="stylesheet" href="../styles/news.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         <link rel="shortcut icon" href="../assets/logo.png" type="text/x-icon">
         <meta name="viewport" content="width=device-width">
@@ -25,8 +25,8 @@
             </button>
             <div :class="navClass.menu" id="dropDownMenu">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-auto" v-for="item in url"> 
-                        <li-item v-bind:href="item.href" v-bind:todo="item"></li-item>
+                    <li class="nav-item mx-auto" v-for="item in url" :key="item.id"> 
+                        <li-item :href="item.href" :todo="item"></li-item>
                     </li>
                 </ul>
             </div>
@@ -35,11 +35,12 @@
         <div id="main" class="container news">
             <div class="row">
                 <div class="author_date col-md-8 d-flex">
-                    <p v-for="val in authors[0]">{{ val }}</p>
+                    <p>{{ news[0].name }}</p>
+                    <p>{{ news[0].date }}</p>
                 </div>
-                <div class="col-12"><h3 class="news_header">{{ headers[0].title }}</h3></div>
+                <div class="col-12"><h3 class="news_header">{{ news[0].title }}</h3></div>
                 <div class="description col-12">
-                    <news-img v-bind:src="headers[0].src[0]"></news-img>
+                    <img class="news_img" :src="news[0].src[0]">
                     <h3><span>Миф № 1. В кормах среднего ценового сегмента используется сырье низкого качества</span></h3>
                     <p>Многие уверены, что доступные корма для кошек готовят из сои и непригодных в пищу частей животных — шкур, хвостов и перьев.</p>
                     <p>
@@ -60,7 +61,7 @@
                     </p>
 
                     <h3><span>Миф № 2. К корму нужно добавлять домашнюю еду</span></h3>
-                       <p>
+                    <p>
                         Этот миф вытекает из первого неверного убеждения, что готовый корм имеет низкую пищевую ценность и нуждается 
                         в дополнительном источнике полезных веществ — сыром мясе, твороге, кашах. 
                     </p>
@@ -79,7 +80,7 @@
                     </p>
 
                     <h3><span>Миф № 3. Корм вызывает зависимость </span></h3>
-                    <news-img v-bind:src="headers[0].src[1]"></news-img>
+                    <img class="news_img" :src="news[0].src[1]">
                     <p>
                         Я часто слышу от владельцев вопросы, может ли корм вызвать у кошек зависимость и почему они с таким аппетитом едят именно 
                         Whiskas. Я не раз была на фабриках, где производят Whiskas, и знаю, из чего делают корм, поэтому с уверенностью могу 
@@ -125,7 +126,7 @@
                                 <textarea id="comment" v-model="comment" name="comment" class="form-control" cols="50" rows="3" wrap="hard" tabindex="2" required></textarea>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-outline-success" v-on:click.prevent="addNewComment">Отправить</button>
+                        <button type="submit" class="btn btn-outline-success" @click.prevent="addNewComment">Отправить</button>
                         <button type="reset" class="btn btn-outline-success">Очистить</button>
                     </form>
                     <comment v-for="text in comments" :key="text.id" :word="text"></comment>

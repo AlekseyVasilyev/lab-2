@@ -8,7 +8,7 @@ Vue.component('products',{
                 <img class="feed_img" :src="title.img">
                 <h3>{{ title.header }}</h3>
                 <p>{{ title.description }}</p>
-                <p><span>Состав:</span></p>
+                <h4><span>Состав:</span></h4>
                 <p>{{ title.composition }}</p>
             </div>`
 })

@@ -25,12 +25,13 @@
             </button>
             <div :class="navClass.menu" id="dropDownMenu">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-auto" v-for="item in url"> 
-                        <li-item v-bind:href="item.href" v-bind:todo="item"></li-item>
+                    <li class="nav-item mx-auto" v-for="item in url" :key="item.id"> 
+                        <li-item :href="item.href" :todo="item"></li-item>
                     </li>
                 </ul>
             </div>
         </nav>
+        
         <div class="main container-fluid" id="main">
             <div class="row">
                 <h3 class="headline col-12">Сотрудники компании</h3>

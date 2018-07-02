@@ -8,9 +8,7 @@
         <meta name="description" content="Новости Вискас">
         <meta name="keywords" content="новости, интересные статьи, вискас, whiskas">
         <script src="../scripts/jquery-3.3.1.js"></script>
-        <!-- <script src="../scripts/jq-news-script.js"></script> -->
-        <link rel="stylesheet" href="../styles/news.css">
-        <link rel="stylesheet" href="../styles/animate.css">
+        <link rel="stylesheet" href="../styles/news-main.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         <link rel="shortcut icon" href="../assets/logo.png" type="text/x-icon">
         <meta name="viewport" content="width=device-width">
@@ -28,8 +26,8 @@
             </button>
             <div :class="navClass.menu" id="dropDownMenu">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-auto" v-for="item in url"> 
-                        <li-item v-bind:href="item.href" v-bind:todo="item"></li-item>
+                    <li class="nav-item mx-auto" v-for="item in url" :key="item.id"> 
+                        <li-item :href="item.href" :todo="item"></li-item>
                     </li>
                 </ul>
             </div>
@@ -37,78 +35,24 @@
         
         <div id="main">
             <div id="toggleView" class="d-flex">
-                <button class="btn btn-info choose m-1" v-on:click="full = true, list = false"><p class="m-0">Full</p></button>
-                <button class="btn btn-info choose m-1" v-on:click="list = true, full = false"><p class="m-0">Small</p></button>
+                <button class="btn btn-info choose m-1" @click="full = true, list = false">
+                    <p class="m-0">Full</p>
+                </button>
+                <button class="btn btn-info choose m-1" @click="list = true, full = false">
+                    <p class="m-0">Small</p>
+                </button>
             </div>
+            <form class="search">
+                <label>Поиск по новостям:</label>
+                <input name="search" v-model="search">
+            </form>
+            
             <div v-if="full == true">
-                <div class="container">
-                    <div class="row">
-                        <div :class="bootsClass.author">
-                            <p v-for="val in authors[0]">{{ val }}</p>
-                        </div>
-                    </div>
-                    <h3 :class="bootsClass.header"><a v-bind:href="headers[0].href" class="header-link">{{ headers[0].title }}</a></h3>
-                    <div class="description row">
-                        <news-main-img v-bind:src="headers[0].src[0]"></news-main-img>
-                        <a v-bind:href="headers[0].href" class="btn_pink">Читать подробнее</a>
-                        <p class="col-sm-12 col-lg-10 col-12 mx-auto">
-                            Существуют разные мифы о доступных кормах, как Whiskas. Принимая их за чистую монету, многие 
-                            владельцы питомцев решают отказаться от готового рациона в пользу еды со стола или более дорогого 
-                            корма. Но стоит ли верить тому, что говорят? Давайте разберемся.
-                        </p>
-                    </div>
-                </div>
-                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div :class="bootsClass.author">
-                            <p v-for="val in authors[1]">{{ val }}</p>
-                        </div>
-                    </div>
-                    <h3 :class="bootsClass.header">
-                        <a v-bind:href="headers[1].href" class="header-link">{{ headers[1].title }}</a>
-                    </h3>
-                    <div class="description row">
-                        <news-main-img v-bind:src="headers[1].src[0]"></news-main-img>
-                        <a v-bind:href="headers[1].href" class="btn_pink">Читать подробнее</a>
-                        <p class="col-sm-12 col-lg-10 col-12 mx-auto">
-                            Кошки, как и люди, ежедневно нуждаются в получении определенного количества питательных веществ для поддержания 
-                            работы своего организма. Благодаря Центру питания домашних животных WALTHAM, существующему уже более 50 лет, 
-                            Whiskas создает сбалансированное и полноценное питание для питомцев разных возрастов. Мы контролируем более 
-                            40 параметров, для того чтобы полностью обеспечить потребности вашего питомца в питательных веществах!
-                        </p>
-                    </div>
-                </div>
-                <hr>
-                <div class="container">
-                    <div class="row">
-                        <div :class="bootsClass.author">
-                            <p v-for="val in authors[2]">{{ val }}</p>
-                        </div>
-                    </div>
-                    <h3 :class="bootsClass.header">
-                        <a v-bind:href="headers[2].href" class="header-link">{{ headers[2].title }}</a>
-                    </h3>
-                    <div class="description row">
-                        <news-main-img v-bind:src="headers[2].src"></news-main-img>
-                        <a v-bind:href="headers[2].href" class="btn_pink">Читать подробнее</a>
-                        <p class="col-sm-12 col-lg-10 col-12 mx-auto">
-                            Одомашнивание кошек связывают с началом развития земледелия более 9 тысяч лет назад. Стараясь защитить запасы 
-                            зерна от грызунов, люди приманивали диких степных кошек ближе к своим поселениям. Взаимовыгодный союз превратился в долгую 
-                            дружбу, которая, несмотря на смену образа жизни, не повлияла на природные инстинкты и пищевые потребности последних.
-                        </p>
-                    </div>
-                </div>
-                <hr>
+                <news v-for="unit in filterNews" :key="unit.id" :element="unit"></news>
             </div>
 
             <div class="container" v-if="list == true">
-                <div class="description">
-                    <a class="row" v-for="news in headers" :href="news.href">
-                        <small-news-img :link="news"></small-news-img>
-                        <small-news-header :header="news"></small-news-header>
-                    </a>
-                </div>
+                <small-news v-for="cell in filterNews" :key="cell.id" :unit="cell"></small-news>
             </div>
         </div>
 

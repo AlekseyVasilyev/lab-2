@@ -2,6 +2,17 @@ Vue.component('li-item', {
     props: ['todo'],
     template: '<a class="nav-link" :class="todo.active"> {{ todo.text }} </a>'
 })
+Vue.component('recommended',{
+    props:['title'],
+    template:`<div>
+                <img class="feed_img" :src="title.img">
+                <h3>{{ title.header }}</h3>
+                <p>{{ title.description }}</p>
+                <h4><span>Состав:</span></h4>
+                <p>{{ title.composition }}</p>
+            </div>`
+})
+
 var dropDownMenu = new Vue({
     el: '#nav',
     data: {
@@ -99,6 +110,10 @@ var main = new Vue({
                 composition:'злаки и продукты их переработки, мука животного происхождения (в том числе мука из лосося минимум 4%), животные жиры и растительное масло, продукты животного происхождения (в том числе сыр 4%), гидролизат животного происхождения, минералы и витамины, продукты растительного происхождения.',
             }
         ],
+        bootsClasses:{
+            product:'cat_feed col-lg-9 col-md-9 col-sm-11 col-11 mx-auto',
+            headline:'col-lg-8 col-md-9 col-sm-10 col-10 mx-auto'
+        },
         ages:[
             { id:0, name:'До одного года' },
             { id:1, name:'1 год-7 лет' },
@@ -113,7 +128,7 @@ var main = new Vue({
         selectFeedType:'',
 
         kittyMonths:[
-            { id:0, name:'1 месяц', months:1 , selected:'selected'},
+            { id:0, name:'1 месяц', months:1 },
             { id:1, name:'2 месяца', months:2 },
             { id:2, name:'3 месяца', months:3 },
             { id:3, name:'4 месяца', months:4 },

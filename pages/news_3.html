@@ -7,7 +7,7 @@
         <meta name="author" content="Васильев Алексей">
         <meta name="description" content="Эволюция питания кошки">
         <meta name="keywords" content="новости, интересные статьи, вискас, whiskas, Эволюция питания кошки">
-        <link rel="stylesheet" href="../styles/news-main.css">
+        <link rel="stylesheet" href="../styles/news.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         <link rel="shortcut icon" href="../assets/logo.png" type="text/x-icon">
         <meta name="viewport" content="width=device-width">
@@ -25,21 +25,22 @@
             </button>
             <div :class="navClass.menu" id="dropDownMenu">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-auto" v-for="item in url"> 
-                        <li-item v-bind:href="item.href" v-bind:todo="item"></li-item>
+                    <li class="nav-item mx-auto" v-for="item in url" :key="item.id"> 
+                        <li-item :href="item.href" :todo="item"></li-item>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div id="main" class="container">
+        <div id="main" class="container news">
             <div class="row">
                 <div class="author_date col-md-8 d-flex">
-                    <p v-for="val in authors[2]">{{ val }}</p>
+                    <p>{{ news[2].name }}</p>
+                    <p>{{ news[2].date }}</p>
                 </div>
-                <div class="col-12"><h3 class="news_header">{{ headers[2].title }}</h3></div>
+                <div class="col-12"><h3 class="news_header">{{ news[2].title }}</h3></div>
                 <div class="description col-12">
-                    <news-img v-bind:src="headers[2].src"></news-img>
+                    <img class="news_img" :src="news[2].src[0]">
                     <h3><span>Мышь и организм кошек</span></h3>
                     <p>
                         В отличие от собак, которые за время соседства с человеком потеряли общие черты со своим предком — 
@@ -121,7 +122,7 @@
                                 <textarea id="comment" v-model="comment" name="comment" class="form-control" cols="50" rows="3" wrap="hard" tabindex="2" required></textarea>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-outline-success" v-on:click.prevent="addNewComment">Отправить</button>
+                        <button type="submit" class="btn btn-outline-success" @click.prevent="addNewComment">Отправить</button>
                         <button type="reset" class="btn btn-outline-success">Очистить</button>
                     </form>
                     <comment v-for="text in comments" :key="text.id" :word="text"></comment>
