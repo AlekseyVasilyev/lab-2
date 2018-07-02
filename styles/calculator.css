@@ -2,40 +2,8 @@
 @import url(calculator-mobile.css) (max-width:990px);
 @import url(products.css);
 
-.navbar-brand h1{
-    font-weight: 600;
-    margin:-0.1vw 2px 0 0;
-}
-.nav-item a{
-    padding:0.6vw;
-}
-.nav-item{
-    letter-spacing: 2px;
-}
-.nav-link:hover{
-    background-image: linear-gradient(0,#961676,#931773,#911870);
-    color:#fff7fa;
-}
-.navbar-toggler{
-    float: right;
-}
-.logo{
-    float:left;
-}
-#dropDownMenu{
-    left:0;
-}
-.nav-link{
-    color: #d1bec5;
-}
-.active a{
-    color:#fff7fa;
-}
 #food-calculator{
     margin-top:70px;
-}
-.cat_feed{
-    margin-bottom:15px;
 }
 #delicacy{
     text-align: center;

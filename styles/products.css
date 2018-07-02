@@ -1,5 +1,6 @@
 @import url(products-desktop.css) (min-width:991px);
-@import url(products-mobile.css) (max-width:990px);
+@import url(products-tablet.css) (min-width:769px) and (max-width:990px);
+@import url(products-mobile.css) (max-width:768px);
 
 #product{
     text-align: center;
@@ -18,8 +19,5 @@
     margin-top: 10px;
     border:2px solid #931773;
     background-color: #eed0db;
-    margin-bottom:15px;
-}
-.cat_feed p{
-    margin:0;
+    margin-bottom:20px;
 }
